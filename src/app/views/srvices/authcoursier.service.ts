@@ -12,11 +12,11 @@ export class AuthCoursierService {
   constructor(private http: HttpClient) {}
   
   registre(body: any) {
-    return this.http.post('http://localhost:3000/v2/users/signup', body);
+    return this.http.post('v2/users/signup', body);
   }
 
   login(data: any) {
-    return this.http.post('http://localhost:3000/v2/users/login', data);
+    return this.http.post('v2/users/login', data);
   }
 
   saveDataProfile(token: any, role: any, name: any) {
