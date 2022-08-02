@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { MessagesRoutingModule } from './messages-routing.module';
 import { MessagesComponent } from './messages/messages.component';
+import { UnreadmessagesComponent } from './unreadmessages/unreadmessages.component';
 
 
 @NgModule({
   declarations: [
-    MessagesComponent
+    MessagesComponent,
+    UnreadmessagesComponent
   ],
   imports: [
     CommonModule,

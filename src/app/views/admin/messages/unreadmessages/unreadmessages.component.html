@@ -1,0 +1,64 @@
+<div class="dashboard-wrapper">
+    <div class="container-fluid">
+
+        <aside class="page-aside">
+
+
+            <div>
+                <h2 class="py-5"> Tous les messages :</h2>
+            </div>
+            <hr>
+
+            <div class="chat-module">
+                <div class="chat-module-body">
+                    <div class="chat-module-top">
+                        <table class="py-4">
+                            <tr *ngFor="let item of data; index as i" div class="media chat-item">
+                                <th><i class="icon-user-follow"></i></th>
+                                <div class="media-body">
+                                    <div class="chat-item-title">
+
+                                        <td><span>{{item.UtilisateurID.Nom}} {{item.UtilisateurID.Prenom}}</span></td>
+                                        <td><span>{{item.UtilisateurID.DateCreation.substring(0,10)}}</span></td>
+                                    </div>
+                                    <td class="chat-item-body">
+                                        <p>{{item.message}}</p>
+                                    </td>
+                                </div>
+                                <a class="delete"><i class="fa fa-house"></i></a>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+        <div class="main-content container-fluid p-0">
+            <div class="email-head">
+                <div class="email-head-subject">
+                    <div class="title"><a class="active" href="#"><span class="icon"><i
+                                    class="fas fa-star"></i></span></a> <span>Nouveaux message</span>
+                        <div class="icons"><a href="#" class="icon"><i class=""></i></a><a href="#" class="icon"><i
+                                    class=""></i></a><a href="#" class="icon"></a></div>
+                    </div>
+                </div>
+                <div class="email-head-sender">
+                    <div class="date">{{dataArray.UtilisateurID.DateCreation.substring(0,10)}}</div>
+                    <div class="avatar"><img src="assets\front\imgs\log.png" alt="Avatar"
+                            class="rounded-circle user-avatar-md"></div>
+                    <div class="sender"><a href="#">{{dataArray.UtilisateurID.Nom}}
+                            {{dataArray.UtilisateurID?.Prenom}}</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="email-body">
+                <p>{{dataArray.message}}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

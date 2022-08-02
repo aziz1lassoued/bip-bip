@@ -1,5 +1,5 @@
 h5{margin-top: 20px;}
-.commandes-container {
+.commandes- {
     height: 60vh;
     overflow-y: scroll;
 }
@@ -20,7 +20,7 @@ h5{margin-top: 20px;}
     }
 }
 
-@media(max-width:768px){
+@media(-width:768px){
     #post{
         width: 100%;
     }
@@ -169,13 +169,26 @@ height:300px;
 .readmore{
     font-weight:400;
     color:#fff;
-}
+}    
 .btn-submit{
     border-radius:50px;
     border:none;
     height:35px;
     width:120px;
     font-size:14px;
+    margin-left: 72px;
+    font-weight:500;
+    margin-right: 40px;
+
+}
+.btn-submit3{
+    border-radius:50px;
+    border:none;
+    height:35px;
+    background-color: #ff9900;
+    width:120px;
+    font-size:14px;
+    color: #eaf5ff;
     margin-left: 72px;
     font-weight:500;
     margin-right: 40px;
@@ -195,7 +208,7 @@ height:300px;
     height:35px;
     width:120px;
     font-size:14px;
-    background-color:#f1884d;
+    background-color: #ff0000d4;
     color:#fff;
     font-weight:500;
 
@@ -248,17 +261,7 @@ height:300px;
     color:#8b96a5;
     
 }
-.btn-submit1{
-    border-radius:50px;
-    border:none;
-    height:35px;
-    width:120px;
-    font-size:14px;
-    background-color:#8b8b8b;
-    color:#fff;
-    font-weight:500;
 
-}
 
 
 
@@ -270,7 +273,7 @@ body{
     
 }
 .card1{
-    background-color: #142948;
+    background-color: #0e0c28;
     border-radius: 15px;
 
 }
@@ -313,5 +316,15 @@ body{
     background-color: #9c7e31;
 }
 .card1{
-    min-width: 100% !important;
+       min-width: 100% !important;
+}
+.class1{
+    background-color: #ecb21f;
+}
+.class2{
+    background-color: #ec1fb9;
+    
+}
+.col-md-6{
+    top: -30px !important;
 }

@@ -8,24 +8,13 @@
 
     <form #f="ngForm" (ngSubmit)="addMessage(f)">
       <div class="row mb-4">
-        <!-- <div class="col-md-6">
-          <div class="form-group pb-1">
-            <input type="text" class="form-control" required placeholder="Name" />
-          </div>
-          <div class="form-group">
-          </div>
-          <hr>
-          <div class="form-group pb-1">
-            <input type="email" class="form-control" required placeholder="Email" />
-          </div>
 
-        </div> -->
         <div class="col-md-6">
           <textarea name="" id="" cols="" rows="7" class="form-control" required placeholder="Message" name="message"
             required #message="ngModel" ngModel></textarea>
         </div>
       </div>
-      <input type="submit" class="btn btn-primary btn-block" value="Send Message" [disabled]="f.invalid" />
+      <input type="submit" class="btn btn-primary btn-block" value="Envoyer un message" [disabled]="f.invalid" />
     </form>
   </div>
 </section>

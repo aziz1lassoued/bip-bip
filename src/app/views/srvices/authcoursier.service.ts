@@ -35,7 +35,11 @@ export class AuthCoursierService {
     return name;
   }
   getlivrrole() {
-    let name: any = localStorage.getItem('username');
+    let name: any = localStorage.getItem('role');
+    return name;
+  }
+  getlivrePrenom() {
+    let name: any = localStorage.getItem('Prenom');
     return name;
   }
 

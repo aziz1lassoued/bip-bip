@@ -48,7 +48,7 @@ export class OffresComponent implements OnInit {
 
     this.ds.sendreqCommandById(this.id,offre).subscribe(data=>{ 
       this.router.navigate(['coursier/redirect']);
-      this.toast.success({detail:"success ",position:'left',summary:"commande ajouter avec succés",duration:5000})
+      this.toast.success({detail:"success ",position:'tl',summary:"Offre ajouter avec succés",duration:3000})
       
 
       })

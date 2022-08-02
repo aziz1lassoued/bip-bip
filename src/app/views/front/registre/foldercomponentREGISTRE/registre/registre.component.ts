@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { AuthuserService } from 'src/app/views/srvices/authuser.service';
 
 @Component({
@@ -16,26 +17,30 @@ export class RegistreComponent implements OnInit {
   loading = false;
 
   email: any;
-  constructor(private aus: AuthuserService, private route: Router) {}
+   ngOptions = ['Tunis','Ariana','Béja','Ben Arous','Bizerte','Gabès','Gafsa','Jendouba','Kairouan','Kasserine','Kébili','Kef','Mahdia','Manouba','Médenine','Monastir','Nabeul','Sfax','Sidi Bouzid','Siliana','Sousse','Tataouine','Tozeur','Zaghouan']
+  hh = 'Tunis';
+  constructor(private aus: AuthuserService, private route: Router,private toast:NgToastService) {}
 
   ngOnInit(): void {}
 
   registre(f: any) {
     let data = f.value;
-    this.loading = true;
 
     this.aus.registre(data).subscribe(
       (data) => {
         this.route.navigate(['/login']);
-
+this.toast.success({detail:"Enregistré avec succès ",position:'tl',summary:"",duration:2000})
         console.log(data);
       },
       (err: HttpErrorResponse) => {
         this.messageError = err.error.message.errors;
-        console.log(err.error.message.errors.adress.message);
-        this.loading = false;
+        this.toast.error({detail:"Veuillez entrer des informations correctes ",position:'tl',summary:"",duration:2000})
+        if(this.messageError = err.error.message.errors.Email)
+        {
+          this.toast.error({detail:"email ",position:'tl',summary:"",duration:2000});
 
-        console.log(err);
+        };
+     
 
         // console.log(err.status)
       }

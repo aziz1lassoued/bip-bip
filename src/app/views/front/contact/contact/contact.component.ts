@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { AuthadminService } from 'src/app/views/srvices/authadmin.service';
 import { DataService } from 'src/app/views/srvices/data.service';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -31,9 +32,10 @@ export class ContactComponent implements OnInit {
    
 
     this.ds.postMessage(data).subscribe(data=>{ 
-      // this.toast.success({detail:"success ",position:'left',summary:"commande ajouter avec succés",duration:5000})
+      this.toast.success({detail:"success ",position:'tl',summary:"Votre message a été envoyé ",duration:5000})
      
-      this.route.navigate(['/client/contact'],{state:{data:this.tosend}})
+    //   this.route.navigate(['/client/contact']
+    //  )
 
       })
     

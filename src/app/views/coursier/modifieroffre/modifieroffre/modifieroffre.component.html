@@ -1,0 +1,47 @@
+<button type="button" class="close mt-1" (click)="back()"> <span aria-hidden="true">&times;</span> </button>
+
+<main id="main" class="main">
+
+    <div class="container rounded bg-white ">
+
+        <ng-container [formGroup]="registerForm">
+
+
+            <div class="">
+                <div class="p-3 ">
+
+                    <div class="row mt-2">
+                        <div class="col-md-12"><label class="labels">Date de ramassage</label><input type="text"
+                                formControlName="DateRamassage" class="form-control" placeholder="Date de ramassagee"
+                                value=""></div>
+
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12"><label class="labels">Heure de ramassage</label><input type="text"
+                                formControlName="HeureRamassage" class="form-control" placeholder="Heure de ramassage"
+                                value=""></div>
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Date d'arrive</label><input type="text"
+                                formControlName="DateArrive" class="form-control" placeholder="Date d'arrive" value="">
+                        </div>
+
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Heure d'arrive</label><input type="text"
+                                formControlName="HeureArrive" class="form-control" placeholder="Heure d'arrive"
+                                value=""></div>
+                        <div class="col-md-6"><label class="labels">montant</label><input type="text"
+                                formControlName="montant" class="form-control" value="" placeholder="montant"></div>
+                    </div>
+                    <div style=" margin-top: 10px;   "><button class="btn btn-info text-white" type="button"
+                            (click)="updateOffre()">Enregistrer</button></div>
+
+                </div>
+            </div>
+
+        </ng-container>
+    </div>
+</main>

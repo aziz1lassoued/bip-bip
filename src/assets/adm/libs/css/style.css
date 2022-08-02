@@ -21,7 +21,7 @@
    --------------------------
 
 2. UI Elements
-dashboard-wrapper
+dashboard-wrapperindicat
     - 2.1.  Alerts
     - 2.2.  Buttons
     - 2.3.  Cards
@@ -1386,18 +1386,29 @@ Top Header
 
 .indicator {
     content: '';
-    position: absolute;
     top: 16px;
     right: 23px;
     display: inline-block;
     width: 7px;
-    height: 7px;
+    height: 8px;
     border-radius: 100%;
     background-color: #ef172c;
     animation: .9s infinite beatHeart;
     transform-origin: center;
 }
 
+.indicator1 {
+content: '';
+top: 21px;
+right: 23px;
+display: inline-block;
+width: 11px;
+height: 11px;
+border-radius: 100%;
+background-color: #ef7b17;
+animation: .9s infinite beatHeart;
+transform-origin: center;
+}
 @keyframes beatHeart {
     0% {
         transform: scale(0.9);
@@ -1469,7 +1480,7 @@ Top Header
 .nav-user-name {}
 
 .nav-user-info {
-    background-color: #5969ff;
+    background-color: #0e0c28;
     line-height: 1.4;
     padding: 12px;
     color: #fff;

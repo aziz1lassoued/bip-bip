@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <meta charset="UTF-8">
-     <base href="/">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bip-Bip</title>
 
+    <link rel="shortcut icon" href="assets/fav3.png">
 
-
-
- <link rel="stylesheet" href="assets/adm/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Template admin File -->
+    <link rel="stylesheet" href="assets/adm/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/adm/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/adm/libs/css/style.css">
     <link rel="stylesheet" href="assets/adm/vendor/fonts/fontawesome/css/fontawesome-all.css">
@@ -20,107 +21,82 @@
     <link rel="stylesheet" href="assets/adm/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="assets/adm/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title></title>
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="assets/front/vendors/themify-icons/css/themify-icons.css">
-<link rel="stylesheet" href="assets/front/css/rubic.css">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="css/uikit.min.css" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Template front File -->
+    <link rel="stylesheet" href="assets/front/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/front/css/rubic.css">
+    <link rel="stylesheet" href="css/uikit.min.css" />
 
 
 
 </head>
+
 <body>
- 
-     
-
-<app-root></app-root>
-<script src="js/uikit.min.js"></script>
-        <script src="js/uikit-icons.min.js"></script>
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
-<script>
-     function myFunction() {
-         var select= document.getElementById("lang");
-         var value1=select.options[select.selectedIndex].value; 
-         var select= document.getElementById("lan");
-         var value2=select.options[select.selectedIndex].value; 
-     
-         var total =parseInt(value1)+parseInt(value2);
-         document.getElementById("totalPrice").innerHTML = parseInt(total)+"   DT";
-         
-     }
- </script>
- <script>
-    function  myFunction1()
-    {
-     document.getElementById("totalPrice").innerHTML = parseInt(total)+"   DT";
-
-    }
- </script>
 
 
 
+    <app-root></app-root>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+
+    <!-- home animation text  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function myFunction() {
+            var select = document.getElementById("lang");
+            var value1 = select.options[select.selectedIndex].value;
+            var select = document.getElementById("lan");
+            var value2 = select.options[select.selectedIndex].value;
+
+            var total = parseInt(value1) + parseInt(value2);
+            document.getElementById("totalPrice").innerHTML = parseInt(total) + "   DT";
+
+        }
+    </script>
+    <script>
+        function myFunction1() {
+            document.getElementById("totalPrice").innerHTML = parseInt(total) + "   DT";
+
+        }
+    </script>
 
 
 
 
-<!-- slimscroll js -->
-<script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-<!-- main js -->
-<script src="assets/libs/js/main-js.js"></script>
-<!-- chart chartist js -->
-<script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
-<!-- sparkline js -->
-<script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
-<!-- morris js -->
-<script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
-<script src="assets/vendor/charts/morris-bundle/morris.js"></script>
-<!-- chart c3 js -->
-<script src="assets/vendor/charts/c3charts/c3.min.js"></script>
-<script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-<script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
-<script src="assets/libs/js/dashboard-ecommerce.js"></script>
 
 
 
-<script src="assets/front/vendors/jquery/jquery-3.4.1.js"></script>
-<script src="assets/front/vendors/bootstrap/bootstrap.bundle.js"></script>
-<script src="assets/front/vendors/bootstrap/bootstrap.affix.js"></script>
-<script src="assets/front/js/rubic.js"></script>
+    <!-- slimscroll js -->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="assets/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+    <!-- chart c3 js -->
+    <script src="assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="assets/libs/js/dashboard-ecommerce.js"></script>
+
+<!-- script front -->
+
+    <script src="assets/front/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/front/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/front/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/front/js/rubic.js"></script>
 
 
 
-<!-- UIkit JS -->
 
 
 
@@ -153,4 +129,5 @@
 
 
 </body>
+
 </html>

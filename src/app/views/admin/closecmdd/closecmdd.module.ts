@@ -7,7 +7,8 @@ import { ClosecmddComponent } from './closecmdd/closecmdd.component';
 
 @NgModule({
   declarations: [
-    ClosecmddComponent
+    ClosecmddComponent,
+    
   ],
   imports: [
     CommonModule,

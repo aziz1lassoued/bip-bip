@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+// import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+// import { DeleteComponent } from '../admin/closecmdd/closecmdd/delete/delete/delete.component';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
   id: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient ) {}
 
   getallcommands() {
     return this.http.get('http://localhost:3000/v2/commandes/', {
@@ -16,7 +18,27 @@ export class DataService {
       ),
     }); 
   }
-
+  AllReachedCommandes() {
+    return this.http.get('http://localhost:3000/v2/commandes/AllReachedCommandes', {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+  }
+  AllOpenCommandes() {
+    return this.http.get('http://localhost:3000/v2/commandes/AllOpenCommandes', {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+  }
+  AllCloseCommandes() {
+    return this.http.get('http://localhost:3000/v2/commandes/AllCloseCommandes', {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+  }
   getAllClient() {
     return this.http.get('http://localhost:3000/v2/users/' , {
       headers: new HttpHeaders().set(
@@ -67,8 +89,34 @@ export class DataService {
       headers: new HttpHeaders().set(
         'authorization',`${localStorage.getItem('token')}`
       ),
-    }); }
-  
+    }); 
+  }
+  rate(idc :any,idl :any,data:any) {
+    let url = `http://localhost:3000/v2/commandes/Review/${idc}/${idl}`;
+    return this.http.post(url, data, {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+  }
+
+    // deleteOffre(commandid :any,offreid :any) {
+    //   let url = `http://localhost:3000/v2/commandes/cancelReq/${commandid}/${offreid}`;
+    //   return this.http.post(url, {}, {
+    //     headers: new HttpHeaders().set(
+    //       'authorization',`${localStorage.getItem('token')}`
+    //     ),
+    //   }); }
+
+
+    deleteOffre(cmd:any,_id: any,i:any) {
+      let url = `http://localhost:3000/v2/commandes/cancelReq/${cmd}/${_id}`;
+      return this.http.delete(url, {  
+             headers: new HttpHeaders().set(
+          'authorization',`${localStorage.getItem('token')}`
+        ),
+      });
+    }
   // getByIdForAdmin( adminorClientorlivreur ) 
   getById(id: any) {
     return this.http.get('http://localhost:3000/v2/users/me', {
@@ -98,9 +146,16 @@ export class DataService {
       ),
     });
   }
+  getOffreByIdforadmin(id: any){
+    return this.http.get('http://localhost:3000/v2/offres/AdministratorCommande/' + id, {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    });
+  }
  
-  getAllOpenCommandByIdforEmp() {
-    return this.http.get('http://localhost:3000/v2/commandes/AllOpenCommandes/', {
+  AllUnknowCommandes() {
+    return this.http.get('http://localhost:3000/v2/commandes/AllUnknowCommandes/', {
       headers: new HttpHeaders().set(
         'authorization',`${localStorage.getItem('token')}`
       ),
@@ -140,8 +195,8 @@ export class DataService {
       ),
     }); 
   }
-  getAllOffreforClient(_id:any) {
-    return this.http.get('http://localhost:3000/v2/offres/request/'+_id, {
+  getAllOffreforClient(id:any) {
+    return this.http.get('http://localhost:3000/v2/offres/request/'+id, {
       headers: new HttpHeaders().set(
         'authorization',`${localStorage.getItem('token')}`
       ),
@@ -154,10 +209,47 @@ export class DataService {
       ),
     }); 
   }
-
+  getCommandByIdforEclient(id :any) {
+    return this.http.get('http://localhost:3000/v2/offres/getOneOffre/'+id, {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+  }
+  getOneLivreur(id :any) {
+    return this.http.get('http://localhost:3000/v2/users/getEmp/'+id, {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+  }
 
   updateUser(_id: any, data: any) {
     let url = `http://localhost:3000/v2/users/${_id}`;
+    return this.http.patch(url, data, {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+
+
+
+    
+  }
+  updateCommande(id: any, user: any) {
+    let url = `http://localhost:3000/v2/commandes/${id}`;
+    return this.http.patch(url, user, {
+      headers: new HttpHeaders().set(
+        'authorization',`${localStorage.getItem('token')}`
+      ),
+    }); 
+
+
+
+    
+  }
+  updateOffre(id: any, data: any) {
+    let url = `http://localhost:3000/v2/offres/${id}`;
     return this.http.patch(url, data, {
       headers: new HttpHeaders().set(
         'authorization',`${localStorage.getItem('token')}`
@@ -213,4 +305,65 @@ export class DataService {
     }); 
   }
 
+
+  allUnReadedMessage() {
+  return this.http.get('http://localhost:3000/v2/messages/unreadMessages' , {
+    headers: new HttpHeaders().set(
+      'authorization',`${localStorage.getItem('token')}`
+    ),
+  });
+
 }
+GetAllUnreadOffres() {
+  return this.http.get('http://localhost:3000/v2/offres/GetOffres' , {
+    headers: new HttpHeaders().set(
+      'authorization',`${localStorage.getItem('token')}`
+    ),
+  });
+
+}
+GetAllUnreadMissions() {
+  return this.http.get('http://localhost:3000/v2/commandes/myNewMessions' , {
+    headers: new HttpHeaders().set(
+      'authorization',`${localStorage.getItem('token')}`
+    ),
+  });
+
+}
+readMessage(id:any) {
+  return this.http.get('http://localhost:3000/v2/messages/'+id , {
+    headers: new HttpHeaders().set(
+      'authorization',`${localStorage.getItem('token')}`
+    ),
+  });
+
+}
+readOffre(id:any) {
+  return this.http.get('http://localhost:3000/v2/offres/getOneOffre/'+id , {
+    headers: new HttpHeaders().set(
+      'authorization',`${localStorage.getItem('token')}`
+    ),
+  });
+
+}
+readMissions(id:any) {
+  return this.http.get('http://localhost:3000/v2/commandes/myNewMessions/'+id , {
+    headers: new HttpHeaders().set(
+      'authorization',`${localStorage.getItem('token')}`
+    ),
+  });
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+

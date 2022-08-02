@@ -85,3 +85,14 @@ body {
      flex: 1 0 66.66667% !important;
      max-width: 96.66667% !important;
 }
+.class1{    background: #0cdf264d;
+    color: #ffffff4a;
+    font-family: emoji;
+    text-decoration: line-through;
+    cursor: not-allowed;
+    pointer-events: none;
+    
+    
+
+
+  } 

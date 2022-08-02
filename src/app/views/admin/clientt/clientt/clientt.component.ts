@@ -25,14 +25,7 @@ export class ClienttComponent implements OnInit {
 
      
 
-      // if(this.dataArray.data.role==('client')){
-      // console.log(this.dataArray)
-
-      // }
-
-      // if (this.dataArray.role == 'admin') {
-      //   console.log(this.dataArray);
-      // }
+    
     });
   }
   // delete(id:any,i:number){

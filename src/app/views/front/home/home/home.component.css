@@ -79,28 +79,27 @@ body {
 	color: #fff;
 }
 .form-box {
-	justify-content: center;
-  border:1px solid #0c0c0c5e;
+  justify-content: center;
+  border: 1px solid #0c0c0c5e;
   border-radius: 4px;
-	background-color: rgba(255, 255, 255, 0);
-	margin: auto auto;
-	padding: 40px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(10, 7, 7, 0.941);
-	position:absolute;
-	top: 1;
-	bottom: 60px;
-	left: 30;
-	right: 00;
-	width: 500px;
-	height: 430px;
-	background-color:#eed33f45;
+  background-color: rgba(255, 255, 255, 0);
+  margin: auto auto;
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(10 7 7 / 94%);
+  position: absolute;
+  top: 27px;
+  bottom: 60px;
+  left: 837px;
+  right: 00;
+  width: 500px;
+  height: 334px;
+  background-color: #eed33f45;
 	
 }
  
 .form-box .header-text {
 	font-size: 32px;
-  color: 1px solid #c127a2;
 	font-weight: 600;
 	
 	padding-bottom: 30px;
@@ -108,13 +107,12 @@ body {
 }
 .form-box input {
 	margin: 10px 0px;
-	border: 1px solid #c127a2;
+
 	padding: 10px;
 	border-radius: 5px;
 	width: 100%;
 	font-size: 18px;
 
-  border: 1px solid #c127a2;
   border-radius: 4px;
 }
 .form-box input[type=checkbox] {
@@ -151,20 +149,19 @@ body {
 	color: rgb(246, 230, 230);
 	text-align: center;
 	line-height: 20px;
-  border: 1px solid #c127a2;
   border-radius: 4px;
 }
 .form-box span {
 	font-size: 14px;
 	font-size: 18.5px;
-    color: #91256ad9;
+    color: #040037;
 }
 .form-box button {
   border: 1px solid #0c0c0c5e;
   border-radius: 4px;
-	background-color:rgb(233 188 41 / 43%);
 
-    color: #9b2570ee;
+
+    
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -172,7 +169,7 @@ body {
 	font-size: 18px;
 	padding: 10px;
 	margin: 20px 0px;
-  border:1px solid #c127a2;
+
   border-radius: 1px;
   
 }
@@ -442,7 +439,7 @@ span a {
   outline: none;
   overflow: hidden;
   position: relative;
-  color: #9b3f73;
+  color: #040037;
   background-color: #eec3376e;
   margin: 0 auto;
   box-shadow:0 5px 15px rgb(0 0 0 / 66%);
@@ -530,4 +527,5 @@ h1{    font-size: 2.5rem;
 
 /* text-loop */
 
-  
+.form-control
+{color: #000000 !important;}

@@ -21,16 +21,9 @@ export class LivreursComponent implements OnInit {
     this.ds.getAllClient().subscribe((response: any) => {
       // get all-comman
       this.livreursArray = response.data.doc.filter((e:any) => e.role == 'livreur')
-     
+     console.log(this.livreursArray)
 
-      // if(this.dataArray.data.role==('client')){
-      // console.log(this.dataArray)
-
-      // }
-
-      // if (this.dataArray.role == 'admin') {
-      //   console.log(this.dataArray);
-      // }
+    
     });
   }
  

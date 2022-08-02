@@ -13,10 +13,11 @@ export class MessagesComponent implements OnInit {
  
     this.ds.getAllMessagesFromClient().subscribe((response: any) => {
       this.dataArray = response.data.doc
+      console.log(this.dataArray)
     });
   }
 
-  ngOnInit(): void {    }
+  ngOnInit(): void {  this.ds.getAllMessagesFromClient()  }
 
 
 }

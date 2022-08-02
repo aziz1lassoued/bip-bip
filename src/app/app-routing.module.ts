@@ -5,6 +5,8 @@ import { AadminLayoutComponent } from './layout/aadmin-layout/aadmin-layout.comp
 import { FrontLayoutComponent } from './layout/front-layout/front-layout.component';
 import { FrontLivreurLayoutComponent } from './layout/front-livreur-layout/front-livreur-layout.component';
 import { FrontProfileLayoutComponent } from './layout/front-profile-layout/front-profile-layout.component';
+import { DetailsoffreComponent } from './views/admin/commands/detailsoffre/detailsoffre.component';
+import { UnreadmessagesComponent } from './views/admin/messages/unreadmessages/unreadmessages.component';
 import { IntroHomeComponent } from './views/front/home/intro-home/intro-home.component';
 import { LoginModule } from './views/front/login/login.module';
 import { LoginComponent } from './views/front/login/login/login.component';
@@ -31,7 +33,6 @@ const routes: Routes = [
   canActivate:[GurduserGuard]
   ,children:[
     {path:'',loadChildren:()=>import('./views/front/client/client.module').then(m=>m.ClientModule)},
-    {path:'client',loadChildren:()=>import('./views/front/client/client.module').then(m=>m.ClientModule)},
 
     {path:'createcmd',loadChildren:()=>import('./views/front/create-cmd/create-cmd.module').then(m=>m.CreateCmdModule)},
 
@@ -47,6 +48,9 @@ const routes: Routes = [
     {path:'notfound',loadChildren:()=>import('./views/front/notfound/notfound.module').then(m=>m.NotfoundModule)},
     {path:'enattente',loadChildren:()=>import('./views/front/attente/attente.module').then(m=>m.AttenteModule)},
     {path:'livree',loadChildren:()=>import('./views/front/livree/livree.module').then(m=>m.LivreeModule)},
+    {path:'review/:idc/:idl',loadChildren:()=>import('./views/front/review/review.module').then(m=>m.ReviewModule)},
+    {path:'offresdetails/:id',loadChildren:()=>import('./views/front/offresdetails/offresdetails.module').then(m=>m.OffresdetailsModule)},
+    {path:'modifiercommande/:id',loadChildren:()=>import('./views/front/modifiercommande/modifiercommande.module').then(m=>m.ModifiercommandeModule)},
 
 
   ] },
@@ -58,7 +62,7 @@ const routes: Routes = [
   // ,
   // canActivate:[GurduserGuard]
   ,children:[
-    {path:'',loadChildren:()=>import('./views/coursier/commands/commands.module').then(m=>m.CommandsModule)},
+    {path:'',loadChildren:()=>import('./views/coursier/accueil/accueil.module').then(m=>m.AccueilModule)},
 
     
 
@@ -69,7 +73,11 @@ const routes: Routes = [
     {path:'offres/:id',loadChildren:()=>import('./views/coursier/offres/offres.module').then(m=>m.OffresModule)},
     {path:'mesoffres',loadChildren:()=>import('./views/coursier/mesoffres/mesoffres.module').then(m=>m.MesoffresModule)},
     {path:'redirect',loadChildren:()=>import('./views/coursier/redirect/redirect.module').then(m=>m.RedirectModule)},
-    
+    {path:'notfound',loadChildren:()=>import('./views/coursier/notfound/notfound.module').then(m=>m.NotfoundModule)},
+    {path:'notfounded',loadChildren:()=>import('./views/coursier/notfounded/notfounded.module').then(m=>m.NotfoundedModule)},
+    {path:'modifieroffre/:id',loadChildren:()=>import('./views/coursier/modifieroffre/modifieroffre.module').then(m=>m.ModifieroffreModule)},
+    {path:'onemissions/:id',loadChildren:()=>import('./views/coursier/onemissions/onemissions.module').then(m=>m.OnemissionsModule)},
+
     
 
     
@@ -88,13 +96,18 @@ const routes: Routes = [
   {path:'dashboard',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
     {path:'livreurs',loadChildren:()=>import('./views/admin/livreurs/livreurs.module').then(m=>m.LivreursModule)},
     {path:'commands',loadChildren:()=>import('./views/admin/commands/commands.module').then(m=>m.CommandsModule)},
-    {path:'offres',loadChildren:()=>import('./views/admin/offres/offres.module').then(m=>m.OffresModule)},
     {path:'moncompte',loadChildren:()=>import('./views/admin/moncompte/moncompte.module').then(m=>m.MoncompteModule)},
     {path:'client',loadChildren:()=>import('./views/admin/clientt/clientt.module').then(m=>m.ClienttModule)},
     {path:'details/:id',loadChildren:()=>import('./views/admin/details/details.module').then(m=>m.DetailsModule)},
     {path:'commands/close',loadChildren:()=>import('./views/admin/closecmdd/closecmdd.module').then(m=>m.ClosecmddModule)},
     {path:'commands/livre',loadChildren:()=>import('./views/admin/livre/livre.module').then(m=>m.LivreModule)},
     {path:'messages',loadChildren:()=>import('./views/admin/messages/messages.module').then(m=>m.MessagesModule)},
+    {path:'admins',loadChildren:()=>import('./views/admin/admins/admins.module').then(m=>m.AdminsModule)},
+
+    {path:'message/:id',component:UnreadmessagesComponent},
+    {path:'detailsoffre/:id',component:DetailsoffreComponent},
+
+
     {path:'commands/opencmd',loadChildren:()=>import('./views/admin/opencmd/opencmd.module').then(m=>m.OpencmdModule)},
 
 

@@ -33,7 +33,6 @@ id=''
 
     this.ds.getCommandById(this.id).subscribe((Response:any)=>
   this.dataArray=Response.data.commande
-    
    
 
     ,(err:HttpErrorResponse)=>this.messgError=err.message)

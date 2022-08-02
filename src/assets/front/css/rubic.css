@@ -7,7 +7,7 @@
 * Licensed: (https://devcrud.com/licenses)
 * Coded disabledby www.devcrud.com col-md-6
 
-=========================================================
+=========================================================.has-img-bg
 
 * d-lg The modal above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
@@ -11004,8 +11004,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 /*header bg-img */
 .has-img-bg {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/bg-img.jpg);
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/hpp.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imgs/hpp.webp);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

@@ -8,7 +8,7 @@ import { NgToastService } from 'ng-angular-popup';
   selector: 'app-panier',
   templateUrl: './panier.component.html',
   styleUrls: ['./panier.component.css'],
-  styles:[`
+  styles: [`
   .class1{background:red;color:white;  }
   .class2{background: #ffeeee00;
     color: #ffffff00;
@@ -17,6 +17,7 @@ import { NgToastService } from 'ng-angular-popup';
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0;
+    padding: 4px 44px 2px 36px;
     
 
 
@@ -27,7 +28,23 @@ import { NgToastService } from 'ng-angular-popup';
     text-decoration: line-through;
     cursor: not-allowed;
     pointer-events: none;
-  }`]
+    padding: 4px 44px 2px 36px;
+  }
+  .class4{        background: #09fd1b;
+    black: ;
+    font-family: emoji;
+    color: #ffffff;
+    text-decoration: line-through;
+    cursor: not-allowed;
+    pointer-events: none;
+    padding: 4px 44px 2px 36px;
+    
+  }
+  
+  `
+
+
+  ]
 
 })
 export class PanierComponent implements OnInit {
@@ -48,22 +65,17 @@ export class PanierComponent implements OnInit {
 
     this.ds.getAllCommandesOfCurrentUser().subscribe(
       (response: any) => {
-        // get all-comman
-        this.commandes = response.commandes;
+        this.commandes = response.commandes
+        if (this.commandes == '') {
+          this.route.navigate(['client/notfound']);
+        }
         console.log(this.commandes);
       },
       (err: HttpErrorResponse) => {
         this.messageError = err;
         console.log(this.messageError);
         this.route.navigate(['client/notfound']);
-        // right: 66%;
-        // top: 86%;
 
-        // console.log(err.status)
-
-        // if(this.messgError) {};
-
-        // console.log(err.status)
       }
     );
   }
@@ -74,18 +86,13 @@ export class PanierComponent implements OnInit {
   detailsdatacmd(id: any, i: any) {
     this.route.navigate(['client/datacmd/' + id]);
   }
+  modifierDatacmd(id: any, i: any) {
+    this.route.navigate(['client/modifiercommande/' + id]);
+  }
 
-  // delete(_id:any,i:number){
-  //   this.ds.deleteCmdForClient(id).subscribe(Response=>{
-  //     console.log(Response)
-  //     this.dataArray.splice(i,1)
-  //   })
-  //   }
 
   ngOnInit(): void {
-    // if( history.state)
-    //  this.commande = history.state
-    // this.roter.navigate(['/profile/panier',{state:{data:this.tosend}}]) // put this instriction in parent component
+
   }
   delete(id: any, i: number) {
     this.ds.deleteCmdForClient(id).subscribe((Response) => {
@@ -93,10 +100,12 @@ export class PanierComponent implements OnInit {
       this.commandes.splice(i, 1);
       this.toast.success({
         detail: 'commande',
-        position: 'left',
+        position: 'tl',
         summary: 'commande Annuler avec succés',
         duration: 5000,
       });
     });
+
   }
+
 }

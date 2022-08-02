@@ -37,7 +37,7 @@ constructor(private route:Router,private authUserService:AuthuserService, privat
 ngOnInit(): void {
   
  }
- loginadmin(f:any){
+ login(f:any){
   let data=f.value
   this.authAdminService.login(data).subscribe((Response:any)=>
 {
@@ -45,7 +45,7 @@ ngOnInit(): void {
 this.dataresive=Response
 this.authAdminService.saveDataProfile(this.dataresive.token,this.dataresive.data.user.role,this.dataresive.data.user.Nom,this.dataresive.data.user._id,this.dataresive.data.user.Prenom,this.dataresive.data.user.NumeroTlf,this.dataresive.data.user.Email);
 if(Response.data.user.role == 'admin') this.route.navigate(['/admin/dashboard/']);
-else if(Response.data.user.role == 'client') this.route.navigate(['/client/createcmd']);
+else if(Response.data.user.role == 'client') this.route.navigate(['/client']);
 
 else if(Response.data.user.role == 'livreur') this.route.navigate(['/coursier/']);
 this.toast.success({detail:"Bonjour , tu vas bien ",position:'tl',summary:"",duration:2000})
@@ -53,7 +53,7 @@ this.toast.success({detail:"Bonjour , tu vas bien ",position:'tl',summary:"",dur
 }, (err: HttpErrorResponse) => {
   // this.messageError = err.error.message;
   // console.log(this.messageError);
-  this.toast.error({detail:"échec de la connexion",position:"tl",summary:"email ou mot de passe invalide",duration:4000})
+  this.toast.error({detail:"échec de la connexion",position:"tl",summary:"email ou mot de passe invalide",duration:3000})
 
   // right: 66%;
   // top: 86%;

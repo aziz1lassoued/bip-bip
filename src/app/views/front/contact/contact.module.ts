@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     ContactComponent
@@ -13,7 +14,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ContactRoutingModule,
-    FormsModule
+    FormsModule,
+ 
+
   ]
 })
 export class ContactModule { }

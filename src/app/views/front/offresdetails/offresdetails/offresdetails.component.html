@@ -1,0 +1,101 @@
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                    
+                    <div class="row">
+                        
+                        <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12" >
+                            <button (click)="back()" type="button" class="close mx-3 mt-2" > <span aria-hidden="true" >&times;</span> </button>
+
+                            <div class="card">
+                                <div class="card-header p-4">
+                                   
+                                    <div class="float-right"> <h3 class="mb-0">Montant : {{dataArray?.montant}}dt </h3>
+<p>                                        <img style="    margin-left: 49px;" src="assets/front/imgs/log.png" width="50"> <small>   </small>
+</p>                                    <small style="    margin-left: 20px;"> <span>   {{dataArray?.LivreurID?.Nom}} {{dataArray?.LivreurID?.Prenom}}</span></small>
+                                        <p>Missions réussies : <span>{{dataArray?.LivreurID?.NombreSuccesCommande}}</span></p> 
+                                        <div style="margin-left: 48px;"><strong>{{dataArray?.LivreurID?.Evaluation}}</strong> /5 <i class="fa fa-star"></i></div>
+                                 
+                                </div>
+                                <div class="card-body">
+                                    <div class="row mb-4">
+                                        <div class="col-sm-6">
+                                            <h3 class=" mb-1"> </h3>
+                                         
+                                            <div>Date-Ramassage :</div>
+                                            <div>Heure-Ramassage :</div>
+                                            <div>Date-Arrive :</div>
+                                            <div>Heure-Arrive :</div>
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <h3 class=" mb-1"> </h3>                                            
+                                            <div>{{dataArray?.DateRamassage.substring(0,10)}}  </div> 
+                                            <div>{{dataArray?.HeureRamassage}} </div>
+                                            <div>{{dataArray?.DateArrive.substring(0,10)}}  </div>
+                                            <div>{{dataArray?.HeureArrive}} </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive-sm">
+                                        <table class="table table-striped">
+                                            <thead>
+                                             
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                   
+                                                </tr>
+                                               
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-5">
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+       
+   
+  
+  
+      
+      
+      
+      
+      
+      
+      
+      
+                    
+      

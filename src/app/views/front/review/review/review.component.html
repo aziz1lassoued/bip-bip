@@ -1,0 +1,67 @@
+<form #f="ngForm" (ngSubmit)="post(f)">
+    <div class="container d-flex justify-content-center mt-5">
+
+        <div class="card text-center mb-5" style="    width: 604px !important;">
+
+            <div class="circle-image">
+                <img src="assets\front\imgs\log.png" width="50">
+            </div>
+
+
+            <span class="name mb-1 fw-500">{{dataArray?.Nom}} {{dataArray?.Prenom}}</span>
+            <strong class="text-black-50">Missions réussies :{{dataArray?.NombreSuccesCommande}}</strong>
+            <div class="">
+                <strong>{{dataArray?.Evaluation}}</strong> /5 <i class="fa fa-star"></i>
+            </div>
+
+
+
+            <div class="location mt-4">
+
+                <span class="d-block"><input style="    background-color: #ffffff;" type="" placeholder="commentaire"
+                        class=" border-0 form-control   shadow-lg  text-danger" name="Commentaire" Commentaire required
+                        name="Commentaire" #Commentaire="ngModel" ngModel></span>
+
+
+            </div>
+
+
+            <div class="rate bg-success py-3 text-white mt-3" style="    background-color: #ff4209 !important;">
+
+                <strong class="mb-0">Notez votre livreur</strong>
+
+                <div class="rating">
+                    <input type="radio" name="Evaluation" value="5" id="5" #Evaluation="ngModel" required ngModel><label
+                        for="5">☆</label>
+                    <input type="radio" name="Evaluation" value="4" id="4" #Evaluation="ngModel" required ngModel><label
+                        for="4">☆</label>
+                    <input type="radio" name="Evaluation" value="3" id="3" #Evaluation="ngModel" required ngModel><label
+                        for="3">☆</label>
+                    <input type="radio" name="Evaluation" value="2" id="2" #Evaluation="ngModel" required ngModel><label
+                        for="2">☆</label>
+                    <input type="radio" name="Evaluation" value="1" id="1" #Evaluation="ngModel" required ngModel><label
+                        for="1">☆</label>
+                </div>
+
+
+                <div class="buttons px-4 mt-0">
+
+                    <button type="submit" class="btn btn-warning btn-block rating-submit"
+                        style="background-color: #04ef00 !important;">Evaluer</button>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+</form>

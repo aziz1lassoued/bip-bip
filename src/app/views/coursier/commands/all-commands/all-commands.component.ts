@@ -24,10 +24,12 @@ export class AllCommandsComponent implements OnInit {
   // }
   // messagesuccsess=''
   constructor(private ds: DataService,private toast:NgToastService,private route :Router) {
-    this.ds.getAllOpenCommandByIdforEmp().subscribe((response: any) => {
+    this.ds.AllUnknowCommandes().subscribe((response: any) => {
       // get all-comman
-      this.dataArray = response.data.doc.filter((e:any) => e.offres == '');
+      this.dataArray = response.data.commande
       console.log(this.dataArray)
+      if(this.dataArray=='')
+        {        this.route.navigate(['coursier/notfound']);}
     });
   }
   // #f="ngForm" (ngSubmit)="addMessage(f)"

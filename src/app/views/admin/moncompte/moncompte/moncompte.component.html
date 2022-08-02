@@ -1,103 +1,55 @@
-
 <main id="main" class="main">
     <div class="container rounded bg-white ">
         <ng-container [formGroup]="registerForm">
-        <div class="row">
-            <div class="col-md-1 border-right">
-               
-            </div>
-            <div class="col-md-5 border-right">
-                <div class="p-3 ">
-                    
-                    <div class="row mt-2">
-                        <div class="col-md-12"><label class="labels">Nom</label><input type="text" formControlName="Nom" class="form-control"
-                                placeholder="first name" value=""></div>
+            <div class="row">
+                <div class="col-md-1 border-right">
+
+                </div>
+                <div class="col-md-5 border-right">
+                    <div class="p-3 ">
+
+                        <div class="row mt-2">
+                            <div class="col-md-12"><label class="labels">Nom</label><input type="text"
+                                    formControlName="Nom" class="form-control" placeholder="first name" value=""></div>
+
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-12"><label class="labels">Prenom</label><input type="text"
+                                    formControlName="Prenom" class="form-control" placeholder="Prenom" value=""></div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Téléphone</label><input type="text"
+                                    formControlName="NumeroTlf" class="form-control" placeholder="enter phone number"
+                                    value=""></div>
+
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6"><label class="labels">Gouvernorat</label><input type="text"
+                                    formControlName="Gouvernorat" class="form-control" placeholder="country" value="">
+                            </div>
+                            <div class="col-md-6"><label class="labels">Adresse</label><input type="text"
+                                    formControlName="Adresse" class="form-control" value="" placeholder="state"></div>
+                        </div>
 
                     </div>
-                    <div class="row mt-2">
-                        <div class="col-md-12"><label class="labels">Prenom</label><input type="text" formControlName="Prenom" class="form-control"
-                                placeholder="Prenom" value=""></div>
-                     
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 py-5">
+                        <div class="col-md-12"><label class="labels">Email</label><input type="text"
+                                class="form-control" placeholder="" value="" formControlName="Email"></div>
+                        <br>
+                        <div class="col-md-12"><label class="labels">Ville</label><input type="text"
+                                class="form-control" placeholder="experience" value="" formControlName="Ville"></div>
+                        <br>
+                        <div class="mt-5 text-center"><button class="btn11 btn btn-primary profile-button" type="button"
+                                (click)="updateUser()">Enregistrer
+                            </button></div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Téléphone</label><input type="text" formControlName="NumeroTlf"
-                                class="form-control" placeholder="enter phone number" value=""></div>
-                              
-                     
-                    </div>
-                   <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Gouvernorat</label><input type="text" formControlName="Gouvernorat" class="form-control"
-                                placeholder="country" value=""></div>
-                        <div class="col-md-6"><label class="labels">Adresse</label><input type="text" formControlName="Adresse"
-                                class="form-control" value="" placeholder="state"></div>
-                    </div> 
-                   
+
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="p-3 py-5">
-                    <div class="col-md-12"><label class="labels">Email</label><input type="text"
-                        class="form-control" placeholder="" value=""     formControlName="Email"></div>
-                 <br>
-                    <div class="col-md-12"><label class="labels">Ville</label><input type="text"
-                            class="form-control" placeholder="experience" value="" formControlName="Ville"></div> <br>
-                            <div class="mt-5 text-center"><button class="btn11 btn btn-primary profile-button"  type="button" (click)="updateUser()"  >Enregistrer
-                               </button></div>
-                </div>
-                
-            </div>
-        </div>
-    </ng-container>
+        </ng-container>
     </div>
 </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

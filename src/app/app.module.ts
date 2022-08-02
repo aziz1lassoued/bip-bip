@@ -23,15 +23,15 @@ import { NgToastService } from 'ng-angular-popup';
     HttpClientModule,
     FormsModule,
     NgToastModule
-  ,
-  
-        NotifierModule.withConfig({
-          // Custom options in here
-        })
-    
-    
+    ,
+
+    NotifierModule.withConfig({
+      // Custom options in here
+    })
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

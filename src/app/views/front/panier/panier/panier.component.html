@@ -44,46 +44,110 @@
 
 
 
-<div class=" container min-vh-100  justify-content-center align-items-center " >
-	<div class="row ">
-		<div class="col-md-6 d-flex" *ngFor="let commande of commandes;index as i "  
-		
-			>
-			<div class="card1   mt-3 p-3 g-2"   >
-				<div class="d-flex align-items-center"  >
-					<small class="first">Today at 1:30 pm</small>
-				</div>
-				<div class="mt-3">
-					<h2 class="text1" (click)="detailsdatacmd(commande._id,i)" >Description :<br><h3 style="color: #f1ff23bf;">{{commande.Description}}</h3></h2>
-				</div>
-				<div class="detail mt-4 "><small>Nom-destinataire : {{commande.NomDestinataire}}</small></div>
-				<div class="detail mt-2"><small>Prénom-destinataire :  {{commande.PrenomDestinataire}}</small></div>
-				<div class="detail mt-2"><small>Numéro-téléphone :  {{commande.NumeroTlfDestinataire}}</small></div>
-			
+								<div class=" container min-vh-100  justify-content-center align-items-center " >
+									
+									<div class="row ">
+										<div class="col-md-6 d-flex" *ngFor="let commande of commandes;index as i "  
+										
+											>
+											<div class="card1   mt-3 p-3 g-2"   >
+												<div   class="d-flex align-items-center"  >
+													
+													<small class="first">{{commande.DateCreation.substring(0,10)}}</small>	<div *ngIf="!commande.offres.length" type="button" (click)="modifierDatacmd(commande._id,i)" style="margin-left:343px;color:#36ffac;" ><i  class=" fas fa-edit "    >Edit</i></div >
 
-
-
-
-
-				<div class="mt-3 d-flex justify-content-end px-2" style="padding-left: 7.5rem !important;">
-					<button class="classe"   [ngClass]="{'class1':commande.offres.length,'class2':!commande.offres.length,'class3':commande.LivreurResponsable.length }"
-					
-					
-					
-					class="btn-submit"   (click)="details(commande._id,i)" >offres</button>
-					<button class="btn-submit1" (click)="delete(commande._id,i)" >Annuler</button>
-
-					<!-- <button type="submit" (click)="delete(dataArray._id,i)" class="btn btn-danger" >Delete</button> -->
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-	<!-- /request/+id -->
-
-
-
-
-</div>
-		
+												</div>
+												<div class="mt-3">
+													<h2 class="text1"  >Description <small (click)="detailsdatacmd(commande._id,i)" style="cursor: pointer;" >(Voir Détails)</small> :<br><h3 style="color: #f1ff23bf;">{{commande.Description}}</h3></h2>
+												</div>
+												<div class="detail mt-4 "><small>Nom-destinataire : {{commande.NomDestinataire}}</small></div>
+												<div class="detail mt-2"><small>Prénom-destinataire :  {{commande.PrenomDestinataire}}</small></div>
+												<div class="detail mt-2"><small>Numéro-téléphone :  {{commande.NumeroTlfDestinataire}}</small></div>
+											
+								
+								
+								
+								
+								
+												<div class="mt-3 d-flex justify-content-end px-2" style="padding-left: 7.5rem !important;">
+												
+													<button class="classe"   	[ngClass]="{'class1':commande.offres.length,'class2':!commande.offres.length,'class3':commande?.LivreurResponsable?.length,'class4':commande?.LivreOuNon }"
+													
+													
+													
+													class="btn-submit"   (click)="details(commande._id,i)" > offres</button>
+													
+													<button class="btn-submit1"  data-bs-toggle="modal" data-bs-target="#exampleModal">Annuler</button>
+								
+										  
+										   
+								 
+									
+									
+								
+								<!-- hello  -->
+								
+								
+								
+								
+								
+							
+								<div class="modal fade" id="exampleModal" tabindex="-1"
+								aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+								<div class="modal-content" style="    border-radius: 0px !important;
+								">
+								<div class="modal-header">
+									<h3          style="color: black !important;font-family: math !important;" class="" id="exampleModalLabel">Êtes-vous sûr d'avoir terminé la suppression ?</h3       >
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								
+								<div class="" >
+									<button type="button" style="        border-radius: 2px !important;
+									min-width: 319px !important;
+									height: 77px !important;
+								   
+									" class="btn btn-secondary"
+										data-bs-dismiss="modal" >Non</button>
+									<button type="button" style="        border-radius: 2px !important;
+									min-width: 319px !important;
+									height: 77px !important;
+									float: right;
+									background: #c9031fc7 !important;" class="btn btn-danger" 
+										(click)="delete(commande._id,i)" data-bs-dismiss="modal" >Oui</button>
+								</div>
+								</div>
+								</div>
+								<!-- this.dataArray.splice(i,1)
+								 -->
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+												</div>
+								
+											</div>
+										</div>
+								
+									</div>
+									<!-- /request/+id -->
+								
+								
+								
+								
+								</div>
+										

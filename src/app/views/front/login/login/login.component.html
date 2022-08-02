@@ -6,59 +6,34 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-7 col-xl-6 mx-auto">
-              <strong class="fa fa-home  " style="cursor:pointer;"  routerLink="/" >  /Home</strong>
+              <strong class="fa fa-home  " style="cursor:pointer;" routerLink="/"> /Home</strong>
               <hr>
-              <form  #f="ngForm" (ngSubmit)="loginadmin(f)">
-                 <div class="form-group mb-3">
-                  <input
-                    id="inputEmail"
-                    type="Email"
-                    placeholder="Email address"
-                    required=""
-                    autofocus=""
-                    class="form-control rounded-pill border-0 shadow-sm px-4"
-                    required name="Email" #Email="ngModel" ngModel
-                  />
+              <form #f="ngForm" (ngSubmit)="login(f)">
+                <div class="form-group mb-3">
+                  <input id="inputEmail" type="Email" placeholder="Email" required="" autofocus=""
+                    class="form-control rounded-pill border-0 shadow-sm px-4" required name="Email" #Email="ngModel"
+                    ngModel />
                 </div>
                 <div class="form-group mb-3">
-                  <input
-                    id="inputPassword"
-                    type="password"
-                    placeholder="Password"
-                    required=""
-                    class="form-control rounded-pill border-0 shadow-sm px-4 text-danger"
-                    required name="MotDePasse" #MotDePasse="ngModel" ngModel
-                  /><br />
+                  <input id="inputPassword" type="password" placeholder="Mot de passe" required=""
+                    class="form-control rounded-pill border-0 shadow-sm px-4 text-danger" required name="MotDePasse"
+                    #MotDePasse="ngModel" ngModel /><br />
                 </div>
-                
-                <!-- <div class="custom-control custom-checkbox mb-3">
-                  <input
-                    id="customCheck1"
-                    type="checkbox"
-                    checked
-                    class="custom-control-input"
-                  />
-                  <label for="customCheck1" class="custom-control-label"
-                    >Remember password</label
-                  >
-                </div> -->
+
+
                 <div class="alert alert-danger" *ngIf="messageError">{{messageError}}</div>
-                <button
-                  type="submit"
-                  class="btn btn-bt bt btn-block text-uppercase mb-2 rounded-pill shadow-sm"
-                 
-                >
+                <button type="submit" class="btn btn-bt bt btn-block text-uppercase mb-2 rounded-pill shadow-sm">
                   Login
                 </button>
                 <div class="text-center d-flex justify-content-between mt-4">
-                  
-                  <button type="submit" routerLink="/registre" class="btn btn-bt bt1 btn-block text-uppercase mb-2 rounded-pill shadow-sm">
-                      <u >Créer un compte</u></button
-                    >
+
+                  <button type="submit" routerLink="/registre"
+                    class="btn btn-bt bt1 btn-block text-uppercase mb-2 rounded-pill shadow-sm">
+                    <u>Créer un compte</u></button>
 
 
 
-                  
+
                 </div>
               </form>
             </div>
@@ -68,4 +43,3 @@
     </div>
   </div>
 </div>
-

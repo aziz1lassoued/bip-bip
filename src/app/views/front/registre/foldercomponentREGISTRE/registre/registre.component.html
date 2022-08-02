@@ -1,45 +1,48 @@
-
 <form class="" #f="ngForm" (ngSubmit)="registre(f)">
 
   <div class="container d-flex justify-content-center align-items-center">
     <div class="card b">
-<div type="submit" routerLink="/" >          <a ><i class=" fa fa-home"></i>  /Home</a>
-</div>
+      <div type="submit" routerLink="/"> <a><i class=" fa fa-home"></i> /Home</a>
+      </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form">
             <div class="mt-2">
-              <span>Nom  </span><strong style="float:right;" class="alerts p" *ngIf="Nom.errors?.required && Nom">
-                *             </strong>
+              <span>Nom </span><strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="Nom.errors?.required && Nom">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong>
               <input type="text" class="form-control" placeholder="Name" Nom required name="Nom" #Nom="ngModel"
                 ngModel />
-              
-                
+
+
             </div>
             <div class="mt-2">
-              <span>Prénom </span><strong style="float:right;" class="alerts p" *ngIf="Prenom.errors?.required && Prenom">
-                *             </strong>
-              <input type="text" class="form-control" placeholder="Prénom" Prenom required name="Prenom" #Prenom="ngModel"
-                ngModel />
-            
+              <span>Prénom </span><strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="Prenom.errors?.required && Prenom">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong>
+              <input type="text" class="form-control" placeholder="Prénom" Prenom required name="Prenom"
+                #Prenom="ngModel" ngModel />
+
             </div>
- 
+
             <div class="mt-2">
-              <span>Email</span><strong style="float:right;" class="alerts p" *ngIf="Email.errors?.required && Email">
-                *             </strong>
-              <input type="Email" placeholder="Email"  [pattern]="emailPattern" class="form-control"  Email required name="Email" #Email="ngModel"
-                ngModel />
+              <span>Email</span><strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="Email.errors?.required && Email">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong>
+              <input type="Email" placeholder="Email" [pattern]="emailPattern" class="form-control" Email required
+                name="Email" #Email="ngModel" ngModel />
               <p class="alerts p" *ngIf="Email && Email.errors?.pattern">
                 Cette entrée doit être un e-mail valide
               </p>
             </div>
 
             <div class="mt-2">
-              <span>Mot de passe</span><strong style="float:right;" class="alerts p" *ngIf="MotDePasse.errors?.required && MotDePasse">
-                *             </strong>
-              <input type="MotDePasse" minlength="8" class="form-control" placeholder="MotDePasse" required name="MotDePasse"
-                #MotDePasse="ngModel" ngModel />
-              
+              <span>Mot de passe</span><strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="MotDePasse.errors?.required && MotDePasse">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong>
+              <input type="password" minlength="8" class="form-control" placeholder="MotDePasse" required
+                name="MotDePasse" #MotDePasse="ngModel" ngModel />
+
               <p class="alerts p" *ngIf="MotDePasse.errors?.minlength">
                 cette entrée doit +8 caractères requis
               </p>
@@ -57,19 +60,20 @@
                 cette entrée doit +8 caractères requis
               </p>
               <p class="alerts p" *ngIf="ConfirmerMotDePasse.value !== MotDePasse.value">
-                Les deux mots de passe doivent correspondre              
+                Les deux mots de passe doivent correspondre
               </p>
-             
+
             </div>
-        
-            <p>Tu est ?</p>
+
+            <p>Etes vous ?</p>
             <label class="custom-control custom-radio custom-control-inline">
-                <input required name="role"
-                #role="ngModel" ngModel type="radio" name="radio-inline" value="client" name="role" checked="" class="custom-control-input"><span class="custom-control-label">Client</span>
+              <input required name="role" #role="ngModel" ngModel type="radio" name="radio-inline" value="client"
+                name="role" checked="" class="custom-control-input"><span class="custom-control-label">Client</span>
             </label>
             <label class="custom-control custom-radio custom-control-inline">
-                <input required name="role"
-                #role="ngModel" ngModel type="radio" name="radio-inline" class="custom-control-input" value="livreur" name="role"><span class="custom-control-label">livreur</span>
+              <input required name="role" #role="ngModel" ngModel type="radio" name="radio-inline"
+                class="custom-control-input" value="livreur" name="role"><span
+                class="custom-control-label">livreur</span>
             </label>
 
 
@@ -81,8 +85,8 @@
 
 
 
-            
-          
+
+
 
 
 
@@ -95,46 +99,80 @@
         <div class="col-md-6 form">
           <div>
             <div class=" mt-2">
-              <span>Numéro de téléphone</span><strong style="float:right;" class="alerts p" *ngIf="NumeroTlf  .errors?.required && NumeroTlf  ">
-                *             </strong>
-              <input type="text" minlength="8" [pattern]="emailPattern1" class="form-control" placeholder="numéro de téléNumeroTlf" required name="NumeroTlf"
-                #NumeroTlf="ngModel" ngModel />
-                <p class="alerts p" *ngIf="NumeroTlf && NumeroTlf.errors?.minlength">
-                  Cette entrée doit être un numéro valide
-                </p>
+              <span>Numéro de téléphone</span><strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="NumeroTlf.errors?.required && NumeroTlf">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong>
+              <input type="text" minlength="8" [pattern]="emailPattern1" class="form-control"
+                placeholder="numéro de téléNumeroTlf" required name="NumeroTlf" #NumeroTlf="ngModel" ngModel />
+              <p class="alerts p" *ngIf="NumeroTlf && NumeroTlf.errors?.minlength">
+                Cette entrée doit être un numéro valide
+              </p>
             </div>
 
             <div class=" mt-2">
-              <span>Adresse</span><strong style="float:right;" class="alerts p" *ngIf="Adresse.errors?.required && Adresse">
-                *             </strong>
-              <input type="text" minlength="2" class="form-control" placeholder="Localité" required name="Adresse"
+              <span>Adresse</span><strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="Adresse.errors?.required && Adresse">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong>
+              <input type="text" minlength="2" class="form-control" placeholder="Rue" required name="Adresse"
                 #Adresse="ngModel" ngModel />
-              
+
             </div>
             <div class=" mt-2">
-              <span>Ville</span><strong style="float:right;" class="alerts p" *ngIf="Ville.errors?.required && Ville">
-                *             </strong>
-              <input type="text" minlength="2" class="form-control" placeholder="ville" required name="Ville"
+              <span>Rue</span><strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="Ville.errors?.required && Ville">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong>
+              <input type="text" minlength="2" class="form-control" placeholder="Rue" required name="Ville"
                 #Ville="ngModel" ngModel />
-              
+
             </div>
-           
+
             <div class="mt-2">
-              <label class="labels">Gouvernorat</label>
-              <select class=" form-control "  aria-label="labels" name="Gouvernorat" #Ville="ngModel" ngModel  >
+              <label class="labels">Gouvernorat<strong style="float:right;    margin-top: -3px;" class="alerts"
+                  *ngIf="Gouvernorat.errors?.required && Gouvernorat">
+                  <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label>
+              <select class=" form-control " aria-label="labels" name="Gouvernorat" #Gouvernorat="ngModel" ngModel>
+                <option value="">Choisir la ville ...</option>
                 <option selected>Tunis</option>
-                <option value="gafsa">gafsa</option>
-                <option value="Gabes">Gabes</option>
-                <option value="Nabel">Nabel</option>
+                <option value="Ariana">Ariana</option>
+                <option value="Béja">Béja</option>
+                <option value="Ben Arous">Ben Arous</option>
+                <option value="Bizerte">Bizerte</option>
+                <option value="Gabès">Gabès</option>
+                <option value="Gafsa">Gafsa</option>
+                <option value="Jendouba">Jendouba</option>
+                <option value="Kairouan">Kairouan</option>
+                <option value="Kasserine">Kasserine</option>
+                <option value="Kébili">Kébili</option>
+                <option value="Kef">Kef</option>
+                <option value="Mahdia">Mahdia</option>
+                <option value="Manouba">Manouba</option>
+                <option value="Médenine">Médenine</option>
+                <option value="Monastir">Monastir</option>
+                <option value="Nabeul">Nabeul</option>
+                <option value="Sfax">Sfax</option>
+                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                <option value="Siliana">Siliana</option>
+                <option value="Sousse">Sousse</option>
+                <option value="Tataouine">Tataouine</option>
+                <option value="Tozeur">Tozeur</option>
+                <option value="Zaghouan">Zaghouan</option>
+
               </select>
+
+
+
+
+
+
+
             </div>
-        
-            
+
+
 
             <div class="d-flex justify-content-between align-items-center">
               <div class="text-right">
                 <br>
-                <button type="submit"  style="color: white; border-color: aliceblue;"  class="btn btn-info" >
+                <button type="submit" style="color: white; border-color: aliceblue;" class="btn btn-info">
                   <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                   S'inscrire
                 </button>
@@ -153,41 +191,3 @@
     </div>
   </div>
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

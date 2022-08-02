@@ -7,201 +7,62 @@
   <!-- ============================================================== -->
   <div class="dashboard-header">
     <nav class="navbar navbar-expand-lg bg-white fixed-top" id="navAdmin">
-      <a class="navbar-brand" href="index.html"
-        >BIP <a style="color: rgb(255, 238, 0)">bip</a></a
-      >
+      <a class="navbar-brand" href="index.html">BIP <a style="color: rgb(255, 238, 0)">bip</a></a>
 
       <div>
         <ul id="ul-nav-admin">
           <li class="nav-item dropdown notification">
-            <a
-              class="nav-link nav-icons"
-              href="#"
-              id="navbarDropdownMenuLink1"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              ><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span
-            ></a>
-            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"><i class="fas fa-comment-dots"></i> <span *ngIf="count"
+                class="indicator"></span></a>
+            <ul class="dropdown-menu dropdown-menu-right notification-dropdown" style="    padding: 40px 44px;">
               <li>
                 <div class="notification-title">Notification</div>
                 <div class="notification-list">
-                  <div class="list-group">
-                    <a
-                      href="#"
-                      class="list-group-item list-group-item-action active"
-                    >
+                  <table class="list-group">
+                    <tr class="list-group-item list-group-item-action active"
+                      *ngFor="let item of dataMessages index as i">
                       <div class="notification-info">
                         <div class="notification-list-user-img">
-                          <img
-                            src="assets/adm/images/avatar-2.jpg"
-                            alt=""
-                            class="user-avatar-md rounded-circle"
-                          />
+                          <img src="assets/adm/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle" />
                         </div>
-                        <div class="notification-list-user-block">
-                          <span class="notification-list-user-name"
-                            >Jeremy Rakestraw</span
-                          >accepted your invitation to join the team.
-                          <div class="notification-date">2 min ago</div>
+                        <div class="notification-list-user-block" type="button" (click)="readOneMessage(item._id,i)">
+                          <p>{{item.UtilisateurID?.Nom}} {{item.UtilisateurID?.Prenom}}</p>
+                          ({{item.UtilisateurID?.role}})
+                          <div class="notification-date">{{item.message}} </div>
                         </div>
                       </div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      <div class="notification-info">
-                        <div class="notification-list-user-img">
-                          <img
-                            src="assets/adm/images/avatar-3.jpg"
-                            alt=""
-                            class="user-avatar-md rounded-circle"
-                          />
-                        </div>
-                        <div class="notification-list-user-block">
-                          <span class="notification-list-user-name"
-                            >John Abraham </span
-                          >is now following you
-                          <div class="notification-date">2 days ago</div>
-                        </div>
-                      </div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      <div class="notification-info">
-                        <div class="notification-list-user-img">
-                          <img
-                            src="assets/adm/images/avatar-4.jpg"
-                            alt=""
-                            class="user-avatar-md rounded-circle"
-                          />
-                        </div>
-                        <div class="notification-list-user-block">
-                          <span class="notification-list-user-name"
-                            >Monaan Pechi</span
-                          >
-                          is watching your main repository
-                          <div class="notification-date">2 min ago</div>
-                        </div>
-                      </div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      <div class="notification-info">
-                        <div class="notification-list-user-img">
-                          <img
-                            src="assets/adm/images/avatar-5.jpg"
-                            alt=""
-                            class="user-avatar-md rounded-circle"
-                          />
-                        </div>
-                        <div class="notification-list-user-block">
-                          <span class="notification-list-user-name"
-                            >Jessica Caruso</span
-                          >accepted your invitation to join the team.
-                          <div class="notification-date">2 min ago</div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
+                    </tr>
+
+
+
+                  </table>
                 </div>
               </li>
               <li>
                 <div class="list-footer">
-                  <a href="#">View all notifications</a>
+                  <a routerLink="messages">Tous les messages</a>
                 </div>
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown connection">
-            <a
-              class="nav-link"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i class="fas fa-fw fa-th"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-              <li class="connection-list">
-                <div class="row">
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <a href="#" class="connection-item"
-                      ><img src="assets/adm/images/github.png" alt="" />
-                      <span>Github</span></a
-                    >
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <a href="#" class="connection-item"
-                      ><img src="assets/adm/images/dribbble.png" alt="" />
-                      <span>Dribbble</span></a
-                    >
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <a href="#" class="connection-item"
-                      ><img src="assets/adm/images/dropbox.png" alt="" />
-                      <span>Dropbox</span></a
-                    >
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <a href="#" class="connection-item"
-                      ><img src="assets/adm/images/bitbucket.png" alt="" />
-                      <span>Bitbucket</span></a
-                    >
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <a href="#" class="connection-item"
-                      ><img
-                        src="assets/adm/images/mail_chimp.png"
-                        alt=""
-                      /><span>Mail chimp</span></a
-                    >
-                  </div>
-                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                    <a href="#" class="connection-item"
-                      ><img src="assets/adm/images/slack.png" alt="" />
-                      <span>Slack</span></a
-                    >
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="conntection-footer"><a href="#">More</a></div>
-              </li>
-            </ul>
-          </li>
+
           <li class="nav-item dropdown nav-user">
-            <a
-              class="nav-link nav-user-img"
-              href="#"
-              id="navbarDropdownMenuLink2"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              ><img
-                src="assets/adm/images/utilisateur.png"
-                alt=""
-                class="user-avatar-md rounded-circle"
-            /></a>
-            <div
-              class="dropdown-menu dropdown-menu-right nav-user-dropdown"
-              aria-labelledby="navbarDropdownMenuLink2"
-            >
+            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"><img src="assets/adm/images/utilisateur.png" alt=""
+                class="user-avatar-md rounded-circle" /></a>
+            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
               <div class="nav-user-info">
                 <h5 class="mb-0 text-white nav-user-name">{{ username }}</h5>
                 <span class="status"></span><span class="ml-2">{{ role }}</span>
               </div>
-              <a routerLink="/admin/moncompte" class="dropdown-item" href="#"
-                ><i class="fas fa-user mr-2"></i>Profile</a
-              >
-              <a class="dropdown-item" href="#"
-                ><i class="fas fa-cog mr-2"></i>Setting</a
-              >
-              <a class="dropdown-item" (click)="logout()" 
-                ><i class="fas fa-power-off mr-2"></i>Logout</a
-              >
+              <a routerLink="admins" class="dropdown-item" href="#"><i
+                class="fas fa-user mr-2"></i>Administrateurs</a>
+              <a routerLink="/admin/moncompte" class="dropdown-item" href="#"><i
+                  class="fas fa-user mr-2"></i>Profile</a>
+              <!-- <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a> -->
+              <a class="dropdown-item" style="cursor:pointer;" (click)="logout()"><i
+                  class="fas fa-power-off mr-2"></i>Déconnexion</a>
             </div>
           </li>
         </ul>
@@ -218,15 +79,8 @@
     <div class="menu-list">
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -234,105 +88,42 @@
             <li class="nav-divider">Menu</li>
 
             <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-expanded="false"
-                data-target="#submenu-1"
-                aria-controls="submenu-1"
-                routerLink="dashboard"
-                ><i class="fa fa-fw fa-user-circle"></i>Dashboard
-                <span class="badge badge-success">6</span></a
-              >
+              <a class="nav-link" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"
+                routerLink="dashboard"><i class="fas fa-calendar-alt "></i>
+                Dashboard
+                <span class="badge badge-success">6</span></a>
             </li>
 
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                aria-expanded="false"
-                data-target="#submenu-9"
-                aria-controls="submenu-9"
-                routerLink="commands"
-                ><i class="fa fa-archive"></i>Commandes</a
-              >
-            </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-expanded="false"
-                data-target="#submenu-1"
-                aria-controls="submenu-1"
-                routerLink="client"
-                ><i class="fa fa-users"></i>Clients
-                <span class="badge badge-success">6</span></a
-              >
+              <a class="nav-link" href="#" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"
+                routerLink="commands"><i class="fa fa-archive"></i>Commandes</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-expanded="false"
-                data-target="#submenu-1"
-                aria-controls="submenu-1"
-                routerLink="livreurs"
-                ><i class="fa fa-truck"></i>Livreurs<span
-                  class="badge badge-success"
-                  >6</span
-                ></a
-              >
+              <a class="nav-link" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"
+                routerLink="client"><i class="fa fa-users"></i>Clients
+                <span class="badge badge-success">6</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"
+                routerLink="livreurs"><i class="fa fa-truck"></i>Livreurs<span class="badge badge-success">6</span></a>
             </li>
 
             <li class="nav-divider">Quoi de neuf ?</li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-expanded="false"
-                data-target="#submenu-1"
-                aria-controls="submenu-1"
-                routerLink="messages"
-                ><i class="fa fa-envelope" aria-hidden="true"></i>Messages
-                <span class="badge badge-success">6</span></a
-              >
+              <a class="nav-link" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"
+                routerLink="messages"><i class="fa fa-envelope" aria-hidden="true"></i>Messages
+                <span class="badge badge-success">6</span></a>
             </li>
 
-            <!-- <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-                                <div id="submenu-9" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/map-google.html">Google Maps</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="pages/map-vector.html">Vector Maps</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li> -->
+
           </ul>
         </div>
       </nav>
     </div>
   </div>
-  <!-- ============================================================== -->
-  <!-- end left sidebar MENU -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- wrapper  -->
-  <!-- ============================================================== -->
+
   <div class="dashboard-wrapper">
     <div class="dashboard-ecommerce py-4">
       <router-outlet></router-outlet>
-      <!-- ============================================================== -->
-      <!-- end footer Dashboard Template-->
-      <!-- ============================================================== -->
+
     </div>
-    <!-- ============================================================== -->
-    <!-- end wrapper  -->
-    <!-- ============================================================== -->
-  </div>
-  <!-- ============================================================== -->
-  <!-- end main wrapper  -->
-  <!-- ============================================================== -->
-  <!-- Optional JavaScript -->
-  <!-- jquery 3.3.1 -->
-</div>

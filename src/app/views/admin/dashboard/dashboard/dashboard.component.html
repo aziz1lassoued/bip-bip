@@ -25,9 +25,9 @@
                           <div class="card-body">
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
-                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                          Utilisateurs :</div>
-                                      <div class="h5 mb-0 font-weight-bold text-gray-800">212</div>
+                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 ">
+                                          Utilisateurs :</div><i class="fa fa-users fa-2x text-gray-300 float-right"></i>
+                                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ClientsArray.length}}</div>
                                   </div>
                                   <div class="col-auto">
                                       <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
@@ -42,12 +42,11 @@
                       <div class="card border-left-success shadow h-100 py-2">
                           <div class="card-body">
                               <div class="row no-gutters align-items-center">
-                                  <table class="col mr-2">
-                                      <tr class="text-xs font-weight-bold text-success text-uppercase mb-1" *ngFor="let item of dataArray;index as i" >
-                                          {{i}}
-                                      </tr>
-                                      <div class="h5 mb-0 font-weight-bold text-gray-800">3600</div>
-                                    </table>
+                                  <div class="col mr-2">
+                                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                          Commandes :</div><i class="fa fa-archive float-right fa-2x text-gray-300"></i>
+                                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{dataArray}}</div>
+                                  </div>
                                   <div class="col-auto">
                                       <!-- <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
                                   </div>
@@ -63,16 +62,15 @@
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
                                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Commandes reçus :
-                                      </div>
+                                      </div><i class="fa fa-check-square fa-2x text-gray-300 float-right"></i>
                                       <div class="row no-gutters align-items-center">
                                           <div class="col-auto">
-                                              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">95%</div>
+                                              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{livreeArray.length}}</div>
                                           </div>
                                           <div class="col">
-                                              <div class="progress progress-sm mr-2">
-                                                  <div class="progress-bar bg-info" role="progressbar"
-                                                      style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                      aria-valuemax="100"></div>
+                                              <div class="">
+                                                  <div class="" role="progressbar"
+                                                      style="width: 2%"></div>
                                               </div>
                                           </div>
                                       </div>
@@ -92,8 +90,8 @@
                               <div class="row no-gutters align-items-center">
                                   <div class="col mr-2">
                                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                          Livreurs :</div>
-                                      <div class="h5 mb-0 font-weight-bold text-gray-800">64</div>
+                                          Livreurs :</div><i class="fa fa-truck fa-2x text-gray-300 float-right"></i>
+                                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{livreursArray.length}}</div>
                                   </div>
                                   <div class="col-auto">
                                       <!-- <i class="fas fa-comments fa-2x text-gray-300"></i> -->

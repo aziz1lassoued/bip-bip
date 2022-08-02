@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/views/srvices/data.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-commands',
   templateUrl: './commands.component.html',
@@ -21,22 +22,34 @@ export class CommandsComponent implements OnInit {
 
   // }
   // messagesuccsess=''
-  constructor(private ds: DataService, private route:Router) {
+  check:any
+  v:any
+  constructor(private ds: DataService, private route:Router,private toast:NgToastService) {
     this.ds.getallcommands().subscribe((response: any) => {
       // get all-comman
       this.dataArray = response.data.doc
+      this.check=this.dataArray.statut
+  
+
       console.log(this.dataArray);
     });
+
   }
   ngOnInit(): void {}
   delete(id:any,i:number){
   this.ds.deletecCmmandeFoeAdmin(id).subscribe(Response=>{
     console.log(Response)
     this.dataArray.splice(i,1)
+    this.toast.success({detail:"Supprimer , avec succés ",position:'tl',summary:"",duration:2000})
+
+    
   })
   }
   details(id:any,i:any){
     this.route.navigate(['admin/details/'+id])
+  }
+  detailsOffre(id:any,i:any){
+    this.route.navigate(['admin/detailsoffre/'+id])
   }
   //   }
 

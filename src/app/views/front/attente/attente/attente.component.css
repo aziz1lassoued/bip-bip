@@ -1,5 +1,5 @@
 h5{margin-top: 20px;}
-.commandes-container {
+.commandes- {
     height: 60vh;
     overflow-y: scroll;
 }
@@ -20,7 +20,7 @@ h5{margin-top: 20px;}
     }
 }
 
-@media(max-width:768px){
+@media(-width:768px){
     #post{
         width: 100%;
     }
@@ -254,11 +254,27 @@ height:300px;
     height:35px;
     width:120px;
     font-size:14px;
-    background-color:#8b8b8b;
+    background-color:#ff0000;
     color:#fff;
     font-weight:500;
 
 }
+.btn-submit3{
+    border-radius: 50px;
+    border: none;
+    height: 35px;
+    width: 120px;
+    font-size: 14px;
+  
+    background: #ffeeee00;
+      
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0;
+   
+
+}
+
 
 
 
@@ -270,7 +286,7 @@ body{
     
 }
 .card1{
-    background-color: #142948;
+    background-color: #0e0c28;
     border-radius: 15px;
 
 }
@@ -313,5 +329,15 @@ body{
     background-color: #9c7e31;
 }
 .card1{
-    min-width: 100% !important;
+    min-width: 38% !important;
+}
+.class1{
+    background-color: #ecb21f;
+}
+.class2{
+    background-color: #ec1fb9;
+    
+}
+.col-md-6{
+    top: -30px !important;
 }

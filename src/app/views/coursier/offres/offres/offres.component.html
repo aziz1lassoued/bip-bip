@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-md-6 border-right">
         <div class="saitama">
-          <h1>Description : <p>ygjyguy</p></h1>
+          <h3>Description : {{cmdArray?.Description}}
+          </h3>
 
           <p><strong>Nom-Destinataire :</strong>{{cmdArray?.NomDestinataire}}</p>
           <p><strong>Prénom-Destinataire :</strong>{{cmdArray?.PrenomDestinataire}}</p>
@@ -12,14 +13,14 @@
           <p><strong>Ville-Destinataire :</strong> {{cmdArray?.VilleDestinataire}}</p>
           <p><strong>Numéro-Destinataire :</strong> {{cmdArray?.NumeroTlfDestinataire}}</p>
 
-         
+
           <div class="genos">
-            <h2>Dimension</h2>
+            <h3>Dimension</h3>
             <ul>
-              <li>Poids    : <strong style="color: black;">{{ cmdArray?.Poids }}</strong> </li>
-              <li>Longueur : <strong style="color: black;">{{ cmdArray?.Longueur}}</strong> </li>
-              <li>Largeur  : <strong style="color: black;">{{ cmdArray?.Largeur}}</strong> </li>
-              <li>Hauteur  : <strong style="color: black;">{{ cmdArray?.Hauteur}}</strong> </li>
+              <li>Poids : <strong style="color: black;">{{ cmdArray?.Poids }}kg</strong> </li>
+              <li>Longueur : <strong style="color: black;">{{ cmdArray?.Longueur}}cm</strong> </li>
+              <li>Largeur : <strong style="color: black;">{{ cmdArray?.Largeur}}cm</strong> </li>
+              <li>Hauteur : <strong style="color: black;">{{ cmdArray?.Hauteur}}cm</strong> </li>
 
             </ul>
           </div>
@@ -29,75 +30,34 @@
         <div class="p-3">
           <div class="col-md-12">
             <label for="birthday">Date de remassage:</label>
-            <input
-              type="date"
-              id="birthday"
-              name="DateRamassage"
-              required
-              #DateRamassage="ngModel"
-              ngModel
-            />
-          </div>
-          <div class="col-md-12">
-            <label class="labels">Heure de ramassage:</label
-            ><input
-              type="text"
-              class="form-control"
-              name="HeureRamassage"
-              required
-              #HeureRamassage="ngModel"
-              ngModel
-              placeholder="PM/AM"
-              
-            />
-          </div>
-          <div class="col-md-12 py-4">
-            <label for="birthday">Date d'arrive:</label>
-            <input
-              type="date"
-              id="birthday"
-              name="DateArrive"
-              required
-              #DateArrive="ngModel"
-              ngModel
-            />
-          </div>
-          <div class="col-md-12">
-            <label class="labels">Heure d'arrive</label
-            ><input
-              type="text"
-              class="form-control"
-              name="HeureArrive"
-              required
-              #HeureArrive="ngModel"
-              ngModel
-              placeholder="PM/AM"
-              value=""
-            />
+            <input type="date" id="birthday" name="DateRamassage" required #DateRamassage="ngModel" ngModel />
           </div>
 
           <div class="col-md-12">
-            <label class="labels">Montant:</label
-            ><input
-              type="text"
-              class="form-control"
-              name="montant"
-              required
-              #montant="ngModel"
-              ngModel
-              placeholder="20 dt"
-              value=""
-            />
+            <label class="labels" for="HeureRamassage">Heure de ramassage:</label>
+            <input class="labels" type="time" id="HeureRamassage" name="HeureRamassage" required
+              #HeureRamassage="ngModel" ngModel>
+          </div>
+          <div class="col-md-12 py-4">
+            <label for="birthday">Date d'arrive:</label>
+            <input type="date" id="birthday" name="DateArrive" required #DateArrive="ngModel" ngModel />
+          </div>
+
+          <div class="col-md-12">
+            <label class="labels" for="HeureArrive">Heure d'arrive</label>
+            <input class="labels" type="time" id="HeureArrive" name="HeureArrive" required #HeureArrive="ngModel"
+              ngModel>
+          </div>
+
+          <div class="col-md-12">
+            <label class="labels">Montant:</label><input type="text" class="form-control" name="montant" required
+              #montant="ngModel" ngModel placeholder="Par exemple 20 dt" value="" />
           </div>
           <br />
-        
+
           <div class="mt-5 text-center">
-            <button
-              style="background: #d9f8fa; border: aquamarine"
-              class="btn px-5 btn-primary"
-              [disabled]="f.invalid"
-            >
-              Publié un offre
+            <button style="background: #d9f8fa; border: aquamarine" class="btn px-5 btn-primary" [disabled]="f.invalid">
+              Publié une offre
             </button>
           </div>
         </div>

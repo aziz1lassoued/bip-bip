@@ -15,7 +15,8 @@ export class OffresComponent implements OnInit {
   CommandeID : any ;
   id=''
   dataArray:  any;
-  constructor(private location: Location ,private route:ActivatedRoute,private ds:DataService,private router:Router,private toast:NgToastService) {
+  dataoffre: any;
+  constructor( private location: Location ,private route:ActivatedRoute,private ds:DataService,private router:Router,private toast:NgToastService) {
     this.route.params.subscribe(params =>this.id=params.id)    // id stock dan var id
     this.ds.getAllOffreforClient(this.id).subscribe((Response:any)=> {
       // get all-comman
@@ -38,10 +39,14 @@ export class OffresComponent implements OnInit {
     }, (err: HttpErrorResponse) => {
       this.toast.error({detail:"L'opération a échoué",position:"tr",summary:"Vous avez déja envoyé une demande",duration:5000})
 
-
+console.log(err)
 
      } )
   
+  }
+
+  details(id: any, i: any) {
+    this.router.navigate(['client/offresdetails/' + id]);
   }
  
 }

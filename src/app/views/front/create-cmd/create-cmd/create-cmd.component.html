@@ -1,168 +1,185 @@
-<form #f="ngForm" (ngSubmit)="add(f)" >
+<div>
+  <h3 style="margin-left:30px" class="labels">Passer une nouvelle commande :</h3>
+</div>
+<form #f="ngForm" (ngSubmit)="add(f)">
 
-    <div class="container rounded bg-white mt-5 mb-5">
-      <div class="row">
-        
-        <div class="col-md-6 border-right">
-          <div class="p-3">
-            
-            <div class="row mt-2">
-              <div class="col-md-6">
-                <label class="labels">Description           <strong style="float:right;    margin-top: -3px;" class="alerts" *ngIf="Description.errors?.required && Description">
-                 <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label><input  type="text" class="form-control"
-                  placeholder="décrire votre colis" value="" Description name="Description" required #Description="ngModel" ngModel />
-                  <!-- <small class="alerts" *ngIf="
-                  Description.errors?.minlength
-                ">
-                cette entrée doit +8 caractères
-              </small> -->
-   
-             
-          
-              </div>
-              <div class="col-md-6">
-                <label class="labels">Nombre des pieces<strong style="float:right;    margin-top: -3px;" class="alerts" *ngIf="NbreDePiece.errors?.required && NbreDePiece">
-                  <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label><input type="number" class="form-control" value=""
-                  placeholder="1/10/100"  name="NbreDePiece" required #NbreDePiece="ngModel" ngModel/>
-              </div>
+  <div class="container rounded bg-white mt-5 mb-5">
+
+    <div class="row">
+
+      <div class="col-md-6 border-right">
+
+        <div class="p-3">
+
+          <div class="row mt-2">
+
+            <div class="col-md-6">
+              <label class="labels">Description <strong style="float:right;    margin-top: -3px;" class="alerts"
+                  *ngIf="Description.errors?.required && Description">
+                  <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label><input type="text"
+                class="form-control" placeholder="décrire votre colis" value="" Description name="Description" required
+                #Description="ngModel" ngModel />
+
+
+
+
             </div>
-            <div class="row mt-3">
-              <div class="col-md-12">
-                <label class="labels">Longueur<small class="alerts1" 
-                  >
-                  (Optionnel)
-                </small></label><input type="text" class="form-control" placeholder="cm/m"  name="Longueur" required #Longueur="ngModel" ngModel />
-               
-              </div>
-              <div class="col-md-12">
-               
-                <label class="labels">Largeur<small class="alerts1" 
-                  >
-                  (Optionnel)
-                </small></label><input type="text" class="form-control" placeholder="cm/m longuer" value=""  name="Largeur" required #Largeur="ngModel" ngModel/>
-                
-              </div>
-              <div class="col-md-6">
-                <label class="labels">Hauteur<small class="alerts1" 
-                  >
-                  (Optionnel)
-                </small></label><input type="text" class="form-control" 
-                  placeholder="cm/m pods" value="" name="Hauteur" required #Hauteur="ngModel" ngModel />
-                 
-              </div>
-              <br />
-              <div class="col-md-6">
-                <label class="labels">Poids<small class="alerts1" 
-                  >
-                  (Optionnel)
-                </small></label><input type="text" class="form-control"
-                  placeholder="Kg" value=""  name="Poids" required #Poids="ngModel" ngModel/>
-                  
-              </div>
+            <div class="col-md-6">
+              <label class="labels">Nombre des pieces<strong style="float:right;    margin-top: -3px;" class="alerts"
+                  *ngIf="NbreDePiece.errors?.required && NbreDePiece">
+                  <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label><input type="number"
+                class="form-control" value="" placeholder="1/10/100" name="NbreDePiece" required #NbreDePiece="ngModel"
+                ngModel />
             </div>
-            <div class="row mt-3">
-              <div class="col-md-6">
-                <label class="labels">Nom  destinataire<strong style="float:right;    margin-top: -3px;" class="alerts" *ngIf="NomDestinataire.errors?.required && NomDestinataire">
-                  <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label><input type="text" class="form-control"
-                  placeholder="nom  destinataire" value="" name="NomDestinataire" required #NomDestinataire="ngModel" ngModel />
-                  <small class="alerts" *ngIf="
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label class="labels">Longueur<small class="alerts1">
+                  (Optionnel)
+                </small></label><input type="text" class="form-control" placeholder="cm/m" name="Longueur"
+                #Longueur="ngModel" ngModel />
+
+            </div>
+            <div class="col-md-12">
+
+              <label class="labels">Largeur<small class="alerts1">
+                  (Optionnel)
+                </small></label><input type="text" class="form-control" placeholder="cm/m longuer" value=""
+                name="Largeur" #Largeur="ngModel" ngModel />
+
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Hauteur<small class="alerts1">
+                  (Optionnel)
+                </small></label><input type="text" class="form-control" placeholder="cm/m pods" value="" name="Hauteur"
+                #Hauteur="ngModel" ngModel />
+
+            </div>
+            <br />
+            <div class="col-md-6">
+              <label class="labels">Poids<small class="alerts1">
+                  (Optionnel)
+                </small></label><input type="text" class="form-control" placeholder="Kg" value="" name="Poids"
+                #Poids="ngModel" ngModel />
+
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <label class="labels">Nom destinataire<strong style="float:right;    margin-top: -3px;" class="alerts"
+                  *ngIf="NomDestinataire.errors?.required && NomDestinataire">
+                  <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label><input type="text"
+                class="form-control" placeholder="nom  destinataire" value="" name="NomDestinataire" required
+                #NomDestinataire="ngModel" ngModel />
+              <small class="alerts" *ngIf="
                   Description.errors?.minlength
                 ">
                 cette entrée doit +2 caractères
               </small>
-              </div>
-              <div class="col-md-6">
-                <label class="labels">Prénom  destinataire<strong style="float:right;    margin-top: -3px;" class="alerts" *ngIf="PrenomDestinataire.errors?.required && PrenomDestinataire">
-                  <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label><input type="text" class="form-control" value=""
-                  placeholder="prénom  destinataire" name="PrenomDestinataire" required #PrenomDestinataire="ngModel" ngModel />
-                  <small class="alerts" *ngIf="
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Prénom destinataire<strong style="float:right;    margin-top: -3px;" class="alerts"
+                  *ngIf="PrenomDestinataire.errors?.required && PrenomDestinataire">
+                  <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label><input type="text"
+                class="form-control" value="" placeholder="prénom  destinataire" name="PrenomDestinataire" required
+                #PrenomDestinataire="ngModel" ngModel />
+              <small class="alerts" *ngIf="
                   Description.errors?.minlength
                 ">
                 cette entrée doit +4 caractères
               </small>
-              </div>
             </div>
-            
           </div>
+
         </div>
-        <div class="col-md-6 py-2">
-          <div class="p-3">
-            <div class="col-md-12">
-              <label class="labels">numéro  destinataire<strong style="float:right;    margin-top: -3px;" class="alerts" *ngIf="NumeroTlfDestinataire.errors?.required && NumeroTlfDestinataire">
-                <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label><input minlength="8" type="text" class="form-control" 
-                placeholder="numéro  destinataire" value="" name="NumeroTlfDestinataire" required #NumeroTlfDestinataire="ngModel" ngModel />
-                <small class="alerts5" *ngIf="
+      </div>
+      <div class="col-md-6 py-2">
+        <div class="p-3">
+          <div class="col-md-12">
+            <label class="labels">numéro destinataire<strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="NumeroTlfDestinataire.errors?.required && NumeroTlfDestinataire">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label><input minlength="8" type="text"
+              class="form-control" placeholder="numéro  destinataire" value="" name="NumeroTlfDestinataire" required
+              #NumeroTlfDestinataire="ngModel" ngModel />
+            <small class="alerts5" *ngIf="
                 NumeroTlfDestinataire.errors?.minlength
               ">
               cette entrée doit +8 caractères
             </small>
-            </div>
-            <div class="col-md-12 py-4">
-              <label class="labels">Gouvernorat  destinataire<strong style="float:right;    margin-top: -3px;" class="alerts" *ngIf="GouvernoratDestinataire.errors?.required && GouvernoratDestinataire">
-                <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label>
-              <select class=" form-control "   aria-label="labels" name="GouvernoratDestinataire"  #GouvernoratDestinataire="ngModel" ngModel >
-                <option  value="hh"
-                *ngFor="let opt of ngOptions"
-                [selected]="opt === hh"
-                [value]="opt" >     {{ opt }}     
-                
-                
-                
-                                                           </option>
-              </select>
-            </div>
-            
-    
-            <div class="col-md-12">
-              <label class="labels">Ville  destinataire<strong style="float:right;    margin-top: -3px;" class="alerts" *ngIf="VilleDestinataire.errors?.required && VilleDestinataire">
-                <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label><input  minlength="2" type="text" class="form-control"
-                placeholder="Ville  destinataire" value="" name="VilleDestinataire" required #VilleDestinataire="ngModel" ngModel />
-                <small class="alerts5" *ngIf="
+          </div>
+          <div class="col-md-12 py-4">
+            <label class="labels">Gouvernorat destinataire<strong style="float:right;    margin-top: -3px;"
+                class="alerts" *ngIf="GouvernoratDestinataire.errors?.required && GouvernoratDestinataire">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label>
+            <select class=" form-control " aria-label="labels" name="GouvernoratDestinataire"
+              #GouvernoratDestinataire="ngModel" ngModel>
+              <option value="">Choisir la ville ...</option>
+              <option selected>Tunis</option>
+              <option value="Ariana">Ariana</option>
+              <option value="Béja">Béja</option>
+              <option value="Ben Arous">Ben Arous</option>
+              <option value="Bizerte">Bizerte</option>
+              <option value="Gabès">Gabès</option>
+              <option value="Gafsa">Gafsa</option>
+              <option value="Jendouba">Jendouba</option>
+              <option value="Kairouan">Kairouan</option>
+              <option value="Kasserine">Kasserine</option>
+              <option value="Kébili">Kébili</option>
+              <option value="Kef">Kef</option>
+              <option value="Mahdia">Mahdia</option>
+              <option value="Manouba">Manouba</option>
+              <option value="Médenine">Médenine</option>
+              <option value="Monastir">Monastir</option>
+              <option value="Nabeul">Nabeul</option>
+              <option value="Sfax">Sfax</option>
+              <option value="Sidi Bouzid">Sidi Bouzid</option>
+              <option value="Siliana">Siliana</option>
+              <option value="Sousse">Sousse</option>
+              <option value="Tataouine">Tataouine</option>
+              <option value="Tozeur">Tozeur</option>
+              <option value="Zaghouan">Zaghouan</option>
+
+            </select>
+          </div>
+
+
+          <div class="col-md-12">
+            <label class="labels">Rue destinataire<strong style="float:right;    margin-top: -3px;" class="alerts"
+                *ngIf="VilleDestinataire.errors?.required && VilleDestinataire">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label><input minlength="2" type="text"
+              class="form-control" placeholder="Rue/appartement" value="" name="VilleDestinataire" required
+              #VilleDestinataire="ngModel" ngModel />
+            <small class="alerts5" *ngIf="
                 VilleDestinataire.errors?.minlength
               ">
               cette entrée doit +2 caractères
             </small>
 
-            </div>
-            <br />
-            <div class="col-md-12">
-              <label class="labels">Adresse  destinataire <strong style="" class="alerts" *ngIf="AdressDestinataire.errors?.required && AdressDestinataire">
-                <img src="assets\front\imgs\alert-16.ico" alt="">            </strong></label><input minlength="2" type="text" class="form-control"
-                placeholder="sened/gafsa" value="" name="AdressDestinataire" required #AdressDestinataire="ngModel" ngModel />
-                <small class="alerts5" *ngIf="
+          </div>
+          <br />
+          <div class="col-md-12">
+            <label class="labels">Adresse destinataire <strong style="" class="alerts"
+                *ngIf="AdressDestinataire.errors?.required && AdressDestinataire">
+                <img src="assets\front\imgs\alert-16.ico" alt=""> </strong></label><input minlength="2" type="text"
+              class="form-control" placeholder="sened/gafsa" value="" name="AdressDestinataire" required
+              #AdressDestinataire="ngModel" ngModel />
+            <small class="alerts5" *ngIf="
                 AdressDestinataire.errors?.minlength
               ">
               cette entrée doit +2 caractères
-            </small> 
-            </div>
-            <div class="mt-5 text-center"   >
-              
-              <button class="btnn" >          Envoyer un colis
-              </button>
-              
-            </div>
+            </small>
+          </div>
+          <div class="mt-5 text-center">
+
+            <button class="btnn"> Demande de livraison
+            </button>
+
           </div>
         </div>
       </div>
     </div>
-    </form>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  </div>
+</form>
+
+
+

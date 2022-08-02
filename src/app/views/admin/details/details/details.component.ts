@@ -30,4 +30,5 @@ id=''
   back(): void {
     this.locationpanier.back()
   }
+  
 }

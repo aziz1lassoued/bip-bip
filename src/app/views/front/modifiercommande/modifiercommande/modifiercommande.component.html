@@ -1,0 +1,172 @@
+<div><button (click)="back()" class="btn bnt-secondary " style="    margin: 20px 19px 15px 39px;"><i class="fas fa-reply" ></i> Retour</button></div>
+
+<div>
+    <h3 style="margin-left:30px" class="labels">Modifier une commande :</h3>
+  </div>
+  <form [formGroup]="registerForm">
+  
+    <div class="container rounded bg-white mt-5 mb-5">
+  
+      <div class="row">
+  
+        <div class="col-md-6 border-right">
+  
+          <div class="p-3">
+  
+            <div class="row mt-2">
+  
+              <div class="col-md-6">
+                <label class="labels">Description </label><input type="text"
+                  class="form1"    name="Description" 
+                  
+                  type="text"
+                                    formControlName="Description" class="form1" placeholder="Description" value="" />
+  
+  
+                                              
+  
+              </div>
+              <div class="col-md-6">
+                <label class="labels">Nombre des pieces</label> <input type="text"
+                    class="form1"    name="NbreDePiece" 
+                    
+                    input type="text"
+                                      formControlName="NbreDePiece" class="form1" placeholder="NbreDePiece" value="" />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <label class="labels">Longueur<small class="alerts1">
+                    
+                  </small></label><input type="text"
+                  class="form1"   Longueur name="Longueur" 
+                  
+                  input type="text"
+                                    formControlName="Longueur" class="form1" placeholder="Longueur" value="" />
+  
+              </div>
+              <div class="col-md-12">
+  
+                <label class="labels">Largeur<small class="alerts1">
+                    
+                  </small></label><input type="text"
+                  class="form1"   Largeur name="Largeur" 
+                  
+                  input type="text"
+                                    formControlName="Largeur" class="form1" placeholder="Largeur" value="" />
+  
+              </div>
+              <div class="col-md-6">
+                <label class="labels">Hauteur<small class="alerts1">
+                    
+                  </small></label><input type="text"
+                  class="form1"   Hauteur name="Hauteur" 
+                  
+                  input type="text"
+                                    formControlName="Hauteur" class="form1" placeholder="Hauteur" value="" />
+  
+              </div>
+              <br />
+              <div class="col-md-6">
+                <label class="labels">Poids<small class="alerts1">
+                    
+                  </small></label><input type="text"
+                  class="form1"   Poids name="Poids" 
+                  
+                  input type="text"
+                                    formControlName="Poids" class="form1" placeholder="Poids" value="" />
+  
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <label class="labels">Nom destinataire</label> 
+                    <input type="text"
+                    class="form1"   NomDestinataire name="NomDestinataire" 
+                    
+                    input type="text"
+                                      formControlName="NomDestinataire" class="form1" placeholder="NomDestinataire" value="" />
+                <!-- <small class="alerts" *ngIf="
+                    Description.errors?.minlength
+                  ">
+                  cette entrée doit +2 caractères
+                </small> -->
+              </div>
+              <div class="col-md-6">
+                <label class="labels">Prénom destinataire</label>
+                    <input type="text"
+                    class="form1"   PrenomDestinataire name="PrenomDestinataire" 
+                    
+                    input type="text"
+                                      formControlName="PrenomDestinataire" class="form1" placeholder="PrenomDestinataire" value="" />
+                <!-- <small class="alerts" *ngIf="
+                    Description.errors?.minlength
+                  ">
+                  cette entrée doit +4 caractères
+                </small> -->
+              </div>
+            </div>
+  
+          </div>
+        </div>
+        <div class="col-md-6 py-2">
+          <div class="p-3">
+            <div class="col-md-12">
+               <label class="labels">numéro destinataire</label>
+                  <input type="text"
+                  class="form1"    name="NumeroTlfDestinataire" 
+                  
+                  input type="text"
+                                    formControlName="NumeroTlfDestinataire" class="form1" placeholder="NumeroTlfDestinataire" value="" />
+         
+            </div>
+            <div class="col-md-12">
+                <label class="labels">numéro destinataire</label>
+                    <input type="text"
+                    class="form1"    name="GouvernoratDestinataire" 
+                    
+                    input type="text"
+                                      formControlName="GouvernoratDestinataire" class="form1" placeholder="GouvernoratDestinataire" value="" />
+           
+              </div>
+          
+  
+  
+            <div class="col-md-12">
+              <label class="labels">Ville destinataire</label> 
+                  <input type="text"
+                  class="form1"    name="VilleDestinataire" 
+                  
+                  input type="text"
+                                    formControlName="VilleDestinataire" class="form1" placeholder="VilleDestinataire" value="" />
+              <!-- <small class="alerts5" *ngIf="
+                  VilleDestinataire.errors?.minlength
+                ">
+                cette entrée doit +2 caractères
+              </small> -->
+  
+            </div>
+            <br />
+            <div class="col-md-12">
+              <label class="labels">Adresse destinataire </label><input type="text" 
+                  class="form1"   AdressDestinataire name="AdressDestinataire" 
+                  
+                  input type="text"
+                                    formControlName="AdressDestinataire" class="form1" placeholder="AdressDestinataire" value="" />
+              <!-- <small class="alerts5" *ngIf="
+                  AdressDestinataire.errors?.minlength
+                ">
+                cette entrée doit +2 caractères
+              </small> -->
+            </div>
+            <div class="mt-5 text-center">
+  
+              <button type="submit" style="color:aliceblue; margin-left: -332px;" class="btn btn-info" (click)="updateCommand()"> Enregistrer
+              </button>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

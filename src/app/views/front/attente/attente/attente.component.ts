@@ -1,14 +1,38 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
-import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/views/srvices/data.service';
 
 @Component({
   selector: 'app-attente',
   templateUrl: './attente.component.html',
-  styleUrls: ['./attente.component.css']
+  styleUrls: ['./attente.component.css'],
+  styles: [
+    `
+      .class1 {
+        background: red;
+        color: white;
+      }
+      .class2 {
+        background: #ffeeee00;
+        color: #ffffff00;
+        font-family: emoji;
+        text-decoration: line-through;
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0;
+      }
+      .class3 {
+        background: #323232f7;
+        font-family: emoji;
+        color: red;
+        text-decoration: line-through;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    `,
+  ],
 })
 export class AttenteComponent implements OnInit {
   id: any;
@@ -24,13 +48,15 @@ export class AttenteComponent implements OnInit {
     private toast: NgToastService,
     private route: Router
   ) {
-    this._id = localStorage.getItem('_id');
+    this._id = localStorage.getItem('_id')  
 
     this.ds.AllUnreachedCommandesforClient().subscribe(
       (response: any) => {
         // get all-comman
         this.commandes = response.commandes;
-        console.log(this.commandes);
+        if(this.commandes=='')
+        {        this.route.navigate(['client/notfound']);
+      }
       },
       (err: HttpErrorResponse) => {
         this.messageError = err;
@@ -48,8 +74,7 @@ export class AttenteComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
   detailsdatacmd(id: any, i: any) {
     this.route.navigate(['client/datacmd/' + id]);
   }
