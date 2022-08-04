@@ -98,38 +98,7 @@ body {
 	
 }
  
-.form-box .header-text {
-	font-size: 32px;
-	font-weight: 600;
-	
-	padding-bottom: 30px;
 
-}
-.form-box input {
-	margin: 10px 0px;
-
-	padding: 10px;
-	border-radius: 5px;
-	width: 100%;
-	font-size: 18px;
-
-  border-radius: 4px;
-}
-.form-box input[type=checkbox] {
-	display: none;
-}
-.form-box label {
-	font-family: 'Poppins', sans-serif;
-	position: relative;
-	margin-left: 5px;
-	margin-right: 10px;
-	top: 5px;
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	cursor: pointer;border: 2px solid rgba(188, 194, 191, 0.642);
-  border-radius: 4px;
-}
 .form-box label:before {
   border:1px solid #0c0c0c5e;
   border-radius: 4px;
